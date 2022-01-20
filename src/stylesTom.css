@@ -19,6 +19,7 @@ Variables
   /* BTN Colors */
   --FontColorBlack: #0d0c21;
   --FontColorDark: #777b80;
+  --FontColorDarker: rgb(91, 92, 94) 80;
   --FontColorLight: #cdcfd4;
   --FontColorWhite: #ffffff;
   --FontColorPink: #d85888;
@@ -289,6 +290,7 @@ li {
   width: 100%;
   height: auto;
   background: var(--ColorGrey);
+  padding-top: 1.35rem;
 }
 .footer-center {
   display: flex;
@@ -303,4 +305,33 @@ li {
   letter-spacing: 1.5px;
   font-size: 1rem;
   color: var(--FontColorDark);
+}
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  margin: 0.25rem 0rem;
+  text-align: center;
+}
+.footer-top a {
+  font-family: var(--FF-Roboto);
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: var(--FontColorDark) !important;
+  transition: var(--MainTrans);
+}
+.footer-top a:hover {
+  color: black !important;
+}
+.footer-bot {
+  width: 100% !important;
+  height: 3rem;
+  display: grid;
+  place-items: center;
+  background: var(--FontColorDarker) !important;
+  font-size: 0.8rem;
+  text-align: center;
+  font-weight: 300;
+  color: var(--ColorBGMain);
 }
