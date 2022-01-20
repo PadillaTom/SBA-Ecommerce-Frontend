@@ -290,7 +290,7 @@ li {
   width: 100%;
   height: auto;
   background: var(--ColorGrey);
-  padding-top: 1.35rem;
+  padding-top: 1.2rem;
 }
 .footer-center {
   display: flex;
@@ -334,4 +334,58 @@ li {
   text-align: center;
   font-weight: 300;
   color: var(--ColorBGMain);
+}
+
+/***************************** 
+******** QUERIES ********
+******************************/
+@media screen and (min-width: 668px) {
+  /* Globals */
+  .section-title {
+    font-size: 1.7rem;
+    letter-spacing: 2px;
+  }
+  /* Nav */
+  .nav-container {
+    height: 5rem;
+  }
+  .nav-center {
+    width: 85%;
+  }
+  /* Banner */
+  .banner-text h1 {
+    font-size: 4.5rem;
+  }
+  .banner-text h4 {
+    font-size: 2rem;
+  }
+  /* Categories */
+  .category-sect {
+    width: 85%;
+    margin: 0 auto;
+  }
+  .categories-container {
+    gap: 1.2rem;
+  }
+  .cat-card {
+    height: 8rem;
+  }
+  .cat-card a {
+    font-size: 1.2rem;
+  }
+  /* Products */
+  .products-home-sect .general-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  /* Footer */
+  .footer-title {
+    font-size: 1.45rem;
+  }
+  .footer-top a {
+    font-size: 1.1rem;
+  }
+  .footer-bot {
+    font-size: 0.9rem;
+  }
 }
