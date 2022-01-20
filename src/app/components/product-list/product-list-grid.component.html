@@ -1,0 +1,21 @@
+<div class="main-content">
+  <div class="section section-content-p30">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Loop Over Products -->
+        <div *ngFor="let prod of products" class="col-md-3">
+          <div class="product-box">
+            <img
+              src="{{ prod.imageUrl }}"
+              alt="{{ prod.name }}"
+              class="img-responsive"
+            />
+            <h1>{{ prod.name }}</h1>
+            <div class="price">{{ prod.unitPrice | currency: "EUR" }}</div>
+            <a href="#" class="primary-btn"> Add to Cart </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
