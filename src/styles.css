@@ -15,7 +15,7 @@
 body {
   font-family: Poppins, sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.625;
   color: #666;
   -webkit-font-smoothing: antialiased;
@@ -70,27 +70,27 @@ h6 {
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 2.25rem;
 }
 
 h2 {
-  font-size: 30px;
+  font-size: 1.875rem;
 }
 
 h3 {
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 
 h4 {
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 h5 {
-  font-size: 15px;
+  font-size: 0.94rem;
 }
 
 h6 {
-  font-size: 13px;
+  font-size: 0.81rem;
 }
 
 a {
@@ -114,7 +114,7 @@ a:hover {
 
 /*Layout Css*/
 .section-content-p35 {
-  padding: 0 35px;
+  padding: 0 2.2rem;
 }
 
 .page-wrapper {
@@ -125,18 +125,18 @@ a:hover {
 
 .page-container {
   background: #e5e5e5;
-  padding-left: 200px;
+  padding-left: 12.5rem;
 }
 
 .main-content {
   padding-top: 116px;
-  min-height: 100vh;
+  min-height: 7.25rem;
 }
 
 aside.menu-sidebar.d-none.d-lg-block.clr {
   background: 0 0;
   z-index: 99999999;
-  height: 75px;
+  height: 4.7rem;
   box-shadow: -2px 0 4px #0000003b;
 }
 
@@ -154,8 +154,8 @@ aside.menu-sidebar.d-none.d-lg-block.clr {
   position: fixed;
   top: 0;
   right: 0;
-  left: 200px;
-  height: 75px;
+  left: 12.5rem;
+  height: 4.7rem;
   z-index: 3;
 }
 
@@ -208,7 +208,7 @@ aside.menu-sidebar.d-none.d-lg-block.clr {
 }
 
 .arrows i {
-  font-size: 30px;
+  font-size: 1.9rem;
   padding: 4px 4px;
 }
 
@@ -223,7 +223,7 @@ section {
 }
 
 .section-content-p30 {
-  padding: 0 30px;
+  padding: 0 1.9rem;
 }
 
 .au-input-xl {
@@ -232,7 +232,7 @@ section {
 
 input.au-input.au-input-xl {
   border-radius: 40px !important;
-  margin-right: 15px;
+  margin-right: 0.94rem;
 }
 
 .au-input {
