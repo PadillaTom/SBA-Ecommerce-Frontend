@@ -34,10 +34,12 @@
       <h1 class="section-title">Categories</h1>
       <div class="categories-container">
         <div class="cat-card">
-          <a href="#"> Books </a>
+          <a routerLink="/category/1" routerLinkActive="active-link"> Books </a>
         </div>
         <div class="cat-card">
-          <a href="#"> Coffee Mugs </a>
+          <a routerLink="/category/2" routerLinkActive="active-link">
+            Coffee Mugs
+          </a>
         </div>
         <div class="cat-card">
           <a href="#"> Mouse Pads </a>
@@ -52,10 +54,11 @@
     <!-- Products -->
     <section class="section products-home-sect">
       <h1 class="section-title">Products</h1>
-      <app-product-list class="general-cards"></app-product-list>
+      <router-outlet></router-outlet>
     </section>
     <!-- END Products -->
   </main>
+
   <footer class="footer-container">
     <div class="footer-center">
       <h2 class="footer-title">Site Map</h2>
