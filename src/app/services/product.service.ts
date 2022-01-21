@@ -9,8 +9,12 @@ import { ProductCategory } from 'app/common/product-category';
   providedIn: 'root',
 })
 export class ProductService {
-  private baseProductsUrl = 'http://localhost:8080/api/products';
-  private baseCategoriesUrl = 'http://localhost:8080/api/product-category';
+  private baseProductsUrlLocal = 'http://localhost:8080/api/products';
+  private baseCategoriesUrlLocal = 'http://localhost:8080/api/product-category';
+
+  private baseProductsUrl = 'https://sba-ecommerce.herokuapp.com/api/products';
+  private baseCategoriesUrl =
+    'https://sba-ecommerce.herokuapp.com/api/product-category';
 
   constructor(private httpClient: HttpClient) {}
 
