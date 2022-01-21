@@ -1,0 +1,7 @@
+<div class="categories-container">
+  <div class="cat-card" *ngFor="let cat of categories">
+    <a routerLink="/category/{{ cat.id }}" routerLinkActive="active-link">
+      {{ cat.category }}
+    </a>
+  </div>
+</div>
