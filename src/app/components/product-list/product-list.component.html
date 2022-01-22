@@ -6,9 +6,10 @@
           src="{{ prod.imageUrl }}"
           alt="{{ prod.name }}"
           class="product-img"
+          routerLink="/products/{{ prod.id }}"
         />
       </div>
-      <h1>{{ prod.name }}</h1>
+      <h1 routerLink="/products/{{ prod.id }}">{{ prod.name }}</h1>
       <span>{{ prod.unitPrice | currency: "EUR" }}</span>
       <a href="#" class="primary-btn"> Add to Cart </a>
     </div>
