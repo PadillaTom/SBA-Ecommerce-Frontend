@@ -1,22 +1,22 @@
 <section class="section details-sect">
-  <div class="subsection-container">
-    <span class="subsect-return" routerLink="/products">
-      Back to All Products
-    </span>
-    <div class="subsect-top">
+  <span class="subsect-return" routerLink="/products">
+    Back to All Products
+  </span>
+  <div class="details-container">
+    <div class="details-top">
       <div class="img-container">
         <img src="{{ detailedProduct?.imageUrl }}" alt="" />
       </div>
     </div>
-    <div class="subsect-bot">
+    <div class="details-bot">
       <div class="bot-desc">
         <h2>{{ detailedProduct?.unitPrice | currency: "EUR" }}</h2>
         <h1>{{ detailedProduct?.name }}</h1>
         <p>{{ detailedProduct?.description }}</p>
       </div>
-      <div class="bot-btns">
-        <a href="#"> Add to cart </a>
-      </div>
     </div>
+  </div>
+  <div class="bot-btns">
+    <a href="#"> Add to cart </a>
   </div>
 </section>
