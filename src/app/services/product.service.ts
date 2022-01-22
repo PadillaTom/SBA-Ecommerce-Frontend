@@ -32,7 +32,7 @@ export class ProductService {
   }
 
   searchProducts(mySearch: string): Observable<Product[]> {
-    const searchUrl = `${this.baseProductsUrlLocal}/search/findByNameContaining?name=${mySearch}`;
+    const searchUrl = `${this.baseProductsUrl}/search/findByNameContaining?name=${mySearch}`;
     return this.httpClient
       .get<GetResponseProducts>(searchUrl)
       .pipe(map((response) => response._embedded.products));
