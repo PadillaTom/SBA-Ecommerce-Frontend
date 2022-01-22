@@ -37,6 +37,11 @@ export class ProductService {
       .get<GetResponseProducts>(searchUrl)
       .pipe(map((response) => response._embedded.products));
   }
+
+  getProductDetails(prodId: number): Observable<Product> {
+    const searchUrl = `${this.baseProductsUrlLocal}/${prodId}`;
+    return this.httpClient.get<Product>(searchUrl);
+  }
 }
 
 //  === Interfaces ===

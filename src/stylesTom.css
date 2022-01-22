@@ -304,6 +304,7 @@ li {
 .product-card-container {
   display: flex;
 }
+/*  Products  */
 .product-card {
   width: 100%;
   margin-bottom: 1.7rem;
@@ -321,6 +322,11 @@ li {
   height: 100%;
   margin: 0 auto;
   object-fit: cover;
+  cursor: pointer;
+  transition: var(--MainTrans);
+}
+.product-img:hover {
+  transform: scale(1.07);
 }
 .product-card h1 {
   font-family: var(--FF-OpenSans);
@@ -328,6 +334,11 @@ li {
   letter-spacing: 1.5px;
   font-size: 1.32rem;
   color: var(--FontColorDark);
+  cursor: pointer;
+  transition: var(--MainTrans);
+}
+.product-card h1:hover {
+  color: black;
 }
 .product-card span {
   font-family: var(--FF-OpenSans);
@@ -347,6 +358,34 @@ li {
   font-weight: 300;
   margin-top: 0.55rem;
   box-shadow: 0px 5px 10px rgba(50, 50, 50, 0.2);
+}
+
+/***************************** 
+******** Product Details ********
+******************************/
+.details-sect {
+}
+.subsection-container {
+}
+.subsect-top {
+}
+.subsect-top .img-container {
+}
+.subsect-top .img-container .img {
+}
+.subsect-bot {
+}
+.subsect-bot .bot-desc {
+}
+.subsect-bot .bot-desc h2 {
+}
+.subsect-bot .bot-desc h1 {
+}
+.subsect-bot .bot-desc p {
+}
+.subsect-bot .bot-btns {
+}
+.subsect-bot .bot-btns a {
 }
 
 /***************************** 
