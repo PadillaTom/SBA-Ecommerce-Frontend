@@ -291,6 +291,8 @@ li {
   cursor: pointer;
 }
 .products-not-found {
+  width: 100%;
+  text-align: center;
   font-size: 1.75rem;
   letter-spacing: 2px;
   font-weight: 300;
@@ -490,6 +492,26 @@ li {
     font-size: 1.5rem;
   }
   /* Products */
+  .search-container {
+    margin-bottom: 4.5rem;
+  }
+  .search-form input {
+    width: 100%;
+    height: 3rem;
+    padding-left: 0.4rem;
+    font-size: 1.3rem;
+  }
+  .search-form input::placeholder {
+    font-size: 1.3rem;
+  }
+  .search-form button {
+    height: 3rem;
+    font-size: 1rem;
+  }
+  .products-not-found {
+    padding-top: 0;
+    font-size: 2.2rem;
+  }
   .products-home-sect .general-cards {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
