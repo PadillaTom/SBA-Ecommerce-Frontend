@@ -89,23 +89,20 @@ ul {
 li {
   list-style: none;
 }
-.formBtn {
-  outline: none;
-  border: none;
-  background-color: var(--ColorYellow);
-  border-radius: 0.25rem;
-  padding: 0.65rem 1.1rem;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: var(--MainTrans);
+
+/* Pagination */
+.pagination-container {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  margin-top: 4.5rem;
 }
-.formBtn:hover {
-  box-shadow: 0px 2px 5px rgba(50, 50, 50, 0.2);
-  transition: var(--MainTrans);
-}
-.cancelBtn {
-  background-color: var(--ColorPink);
-  transition: var(--MainTrans);
+
+ngb-pagination .page-item.active .page-link {
+  z-index: 3;
+  color: var(--ColorWhite) !important;
+  background-color: #00aed6;
+  border-color: #00aed6;
 }
 
 /***************************** 

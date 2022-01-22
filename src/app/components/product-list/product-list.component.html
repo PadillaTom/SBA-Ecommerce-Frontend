@@ -19,3 +19,13 @@
 <div *ngIf="products?.length == 0" class="products-not-found">
   No Products Found.
 </div>
+
+<!-- Pagination -->
+<div class="pagination-container">
+  <ngb-pagination
+    [(page)]="thePageNumber"
+    [pageSize]="thePageSize"
+    [collectionSize]="theTotalElements"
+    (pageChange)="listProducts()"
+  ></ngb-pagination>
+</div>

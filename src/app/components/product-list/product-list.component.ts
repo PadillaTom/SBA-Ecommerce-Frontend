@@ -9,9 +9,16 @@ import { ProductService } from 'app/services/product.service';
   styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent implements OnInit {
-  products: Product[];
-  categoryId: number;
-  searchMode: boolean;
+  products: Product[] = [];
+  categoryId: number = 1;
+  previousCategoryId: number = 1;
+  searchMode: boolean = false;
+
+  // For Pagination:
+  thePageNumber: number = 1;
+  thePageSize: number = 6;
+  theTotalElements: number = 0;
+
   constructor(
     private productService: ProductService,
     private route: ActivatedRoute
@@ -42,9 +49,26 @@ export class ProductListComponent implements OnInit {
       // No ID:
       this.categoryId = 1;
     }
-    this.productService.getProductsList(this.categoryId).subscribe((data) => {
-      this.products = data;
-    });
+
+    // Check if we have a Different Category currently
+    // To RESET thePageNumber
+    if (this.previousCategoryId != this.categoryId) {
+      this.thePageNumber = 1;
+    }
+    this.previousCategoryId = this.categoryId;
+
+    this.productService
+      .getProductsListPaginate(
+        this.thePageNumber - 1,
+        this.thePageSize,
+        this.categoryId
+      )
+      .subscribe((data) => {
+        this.products = data._embedded.products;
+        this.thePageNumber = data.page.number + 1;
+        this.thePageSize = data.page.size;
+        this.theTotalElements = data.page.totalElements;
+      });
   }
 
   handleSearchProducts() {
