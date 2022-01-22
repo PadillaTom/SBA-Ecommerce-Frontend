@@ -5,14 +5,14 @@
   <div class="details-container">
     <div class="details-top">
       <div class="img-container">
-        <img src="{{ detailedProduct?.imageUrl }}" alt="" />
+        <img src="{{ detailedProduct.imageUrl }}" alt="" />
       </div>
     </div>
     <div class="details-bot">
       <div class="bot-desc">
-        <h2>{{ detailedProduct?.unitPrice | currency: "EUR" }}</h2>
-        <h1>{{ detailedProduct?.name }}</h1>
-        <p>{{ detailedProduct?.description }}</p>
+        <h2>{{ detailedProduct.unitPrice | currency: "EUR" }}</h2>
+        <h1>{{ detailedProduct.name }}</h1>
+        <p>{{ detailedProduct.description }}</p>
       </div>
     </div>
   </div>

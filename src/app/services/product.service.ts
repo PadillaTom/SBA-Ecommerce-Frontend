@@ -39,7 +39,7 @@ export class ProductService {
   }
 
   getProductDetails(prodId: number): Observable<Product> {
-    const searchUrl = `${this.baseProductsUrlLocal}/${prodId}`;
+    const searchUrl = `${this.baseProductsUrl}/${prodId}`;
     return this.httpClient.get<Product>(searchUrl);
   }
 }

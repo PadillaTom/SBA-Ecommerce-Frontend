@@ -389,8 +389,6 @@ li {
   flex-direction: column;
   margin-top: 2rem;
 }
-.details-bot .bot-desc {
-}
 .details-bot .bot-desc h2 {
   font-family: var(--FF-Roboto);
   font-size: 1.5rem;
@@ -531,8 +529,6 @@ li {
   .details-container {
     margin-top: 0rem;
   }
-  .details-bot .bot-desc {
-  }
   .details-bot .bot-desc h2 {
     font-size: 1.7rem;
     letter-spacing: 1.2px;
@@ -635,8 +631,6 @@ li {
     place-items: center;
     grid-template-columns: repeat(2, 1fr);
     gap: 3.5rem;
-  }
-  .details-bot .bot-desc {
   }
   .details-bot .bot-desc h2 {
     font-size: 1.5rem;
