@@ -16,7 +16,7 @@ export class ProductListComponent implements OnInit {
 
   // For Pagination:
   thePageNumber: number = 1;
-  thePageSize: number = 6;
+  thePageSize: number = 5;
   theTotalElements: number = 0;
 
   constructor(
@@ -76,5 +76,11 @@ export class ProductListComponent implements OnInit {
     this.productService.searchProducts(mySearch).subscribe((data) => {
       this.products = data;
     });
+  }
+
+  updatePageSize(pageSize: number) {
+    this.thePageSize = pageSize;
+    this.thePageNumber = 1;
+    this.listProducts();
   }
 }

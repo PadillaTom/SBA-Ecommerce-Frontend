@@ -21,11 +21,22 @@
 </div>
 
 <!-- Pagination -->
-<div class="pagination-container">
-  <ngb-pagination
-    [(page)]="thePageNumber"
-    [pageSize]="thePageSize"
-    [collectionSize]="theTotalElements"
-    (pageChange)="listProducts()"
-  ></ngb-pagination>
+<div class="products-list-controllers">
+  <div class="pagination-container">
+    <ngb-pagination
+      [(page)]="thePageNumber"
+      [pageSize]="thePageSize"
+      [collectionSize]="theTotalElements"
+      (pageChange)="listProducts()"
+    ></ngb-pagination>
+  </div>
+  <div class="pagesize-container">
+    <span>Page Size: </span>
+    <select (change)="updatePageSize($any($event.target).value)">
+      <option selected="true">5</option>
+      <option>10</option>
+      <option>15</option>
+      <option>20</option>
+    </select>
+  </div>
 </div>
