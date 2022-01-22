@@ -1,0 +1,12 @@
+<form class="search-form">
+  <input
+    #mySearch
+    type="text"
+    class="search-input"
+    placeholder="Search"
+    (keyup.enter)="findProductsByName(mySearch.value)"
+  />
+  <button class="search-btn" (click)="findProductsByName(mySearch.value)">
+    GO!
+  </button>
+</form>
