@@ -19,6 +19,8 @@ export class ProductListComponent implements OnInit {
   thePageSize: number = 5;
   theTotalElements: number = 0;
 
+  previousSearch: string = '';
+
   constructor(
     private productService: ProductService,
     private route: ActivatedRoute
@@ -73,9 +75,24 @@ export class ProductListComponent implements OnInit {
 
   handleSearchProducts() {
     const mySearch: string = this.route.snapshot.paramMap.get('keyword')!;
-    this.productService.searchProducts(mySearch).subscribe((data) => {
-      this.products = data;
-    });
+
+    if (this.previousSearch != mySearch) {
+      this.thePageNumber = 1;
+    }
+    this.previousSearch = mySearch;
+
+    this.productService
+      .searchProductsPaginate(
+        this.thePageNumber - 1,
+        this.thePageSize,
+        mySearch
+      )
+      .subscribe((data) => {
+        this.products = data._embedded.products;
+        this.thePageNumber = data.page.number + 1;
+        this.thePageSize = data.page.size;
+        this.theTotalElements = data.page.totalElements;
+      });
   }
 
   updatePageSize(pageSize: number) {

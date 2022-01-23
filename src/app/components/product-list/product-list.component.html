@@ -27,6 +27,8 @@
       [(page)]="thePageNumber"
       [pageSize]="thePageSize"
       [collectionSize]="theTotalElements"
+      [maxSize]="3"
+      [boundaryLinks]="true"
       (pageChange)="listProducts()"
     ></ngb-pagination>
   </div>
