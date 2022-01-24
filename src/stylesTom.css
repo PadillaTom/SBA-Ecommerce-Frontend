@@ -9,7 +9,7 @@ Variables
 :root {
   /* Colors */
   --ColorWhite: #ffffff;
-  --ColorBGMain: #f6f8fe;
+  --ColorBGMain: #fafafa;
   --ColorGrey: #d8dde8;
   --ColorYellow: #faeecf;
   --ColorPink: #f2d0de;
@@ -31,6 +31,53 @@ Variables
   --FF-OpenSans: "Open Sans";
   /* Others */
   --MainTrans: 0.3s linear all;
+  /* ============= */
+  --Color-Main-White: #ffffff;
+  --Color-Bg: #fafafa;
+  --Color-Cream: #f4f3ec;
+  --Color-Orange: #e4563d;
+  --Color-Blue: #5c8fc0;
+  --Color-Light-Blue: #54adc9;
+  --Color-Pink: #f3cbd1;
+  --Color-Beige: #f4f3ec;
+  --Color-Darks-1: #000000;
+  --Color-Darks-2: #222222;
+  --Color-Darks-3: #333333;
+  --Color-Darks-4: #ababab;
+
+  /* ============= */
+  /*  Plantilla */
+  --g5-color-heading: #333;
+  --g5-color-text-main: #696969;
+  --g5-background-color: #fff;
+  --g5-color-muted: #ababab;
+  --g5-color-link-hover: #e4573d;
+  --g5-color-border: #ededed;
+  --g5-color-heading-r: 51;
+  --g5-color-heading-g: 51;
+  --g5-color-heading-b: 51;
+  --g5-color-border-r: 237;
+  --g5-color-border-g: 237;
+  --g5-color-border-b: 237;
+  --g5-background-color-contrast: #f7f7f7;
+  --g5-background-color-contrast-02: #fff;
+  --g5-background-color-contrast-03: #f8f8f8;
+  --g5-background-color-contrast-04: #f4f3ec;
+  --g5-background-color-contrast-05: #ccc;
+  --g5-background-color-contrast-06: #e0e8ee;
+  --g5-background-color-contrast-07: #333;
+  --g5-background-color-contrast-08: #fafafa;
+  --g5-background-color-contrast-09: rgba(255, 255, 255, 0.7);
+  --g5-background-color-contrast-10: #000;
+  --g5-background-color-contrast-11: #9b9b9b;
+  --g5-background-color-contrast-12: #ababab;
+  --g5-background-color-contrast-13: #ccc;
+  --g5-background-color-contrast-14: #f8f8f8;
+  --g5-background-color-contrast-15: rgba(0, 0, 0, 0.15);
+  --g5-background-color-contrast-16: #fff;
+  --g5-background-color-contrast-17: rgba(255, 255, 255, 0.95);
+  --g5-background-color-contrast-18: #ededed;
+  --g5-background-color-contrast-19: #444;
 }
 
 /* 
@@ -47,7 +94,7 @@ a {
 }
 .main-page {
   max-width: 100vw;
-  background-color: var(--ColorBGMain);
+  background-color: var(--Color-Bg);
 }
 .main-sect {
   padding-top: 3.2rem;
@@ -66,7 +113,7 @@ a {
   text-transform: uppercase;
   margin-top: 1.5rem;
   margin-bottom: 2.5rem;
-  color: var(--FontColorBlack);
+  color: var(--Color-Darks-3);
 }
 .subsect-return {
   display: grid;
@@ -75,13 +122,13 @@ a {
   font-weight: 300;
   font-size: 1.2rem;
   letter-spacing: 1.3px;
-  color: crimson;
+  color: var(---Color-Orange);
   cursor: pointer;
   transition: var(--MainTrans);
   margin-top: 2.5rem;
 }
 .subsect-return:hover {
-  color: red;
+  color: crimson;
 }
 ul {
   list-style: none;
@@ -101,9 +148,9 @@ li {
 }
 ngb-pagination .page-item.active .page-link {
   z-index: 3;
-  color: var(--ColorWhite) !important;
-  background-color: #00aed6;
-  border-color: #00aed6;
+  color: var(--Color-Darks-3) !important;
+  background-color: var(--Color-Beige);
+  border-color: var(--Color-Blue);
 }
 .pagesize-container {
   width: 100%;
@@ -116,7 +163,7 @@ ngb-pagination .page-item.active .page-link {
   font-size: 1.3rem;
   font-weight: 400;
   letter-spacing: 1px;
-  color: #00aed6;
+  color: var(--Color-Blue);
   margin-bottom: 0.45rem;
 }
 
@@ -156,14 +203,13 @@ ngb-pagination .page-item.active .page-link {
 }
 .icons-container > * {
   font-size: 1.4rem;
-  color: var(--ColorBlue);
+  color: var(--Color-Light-Blue);
   cursor: pointer;
   transition: var(--MainTrans);
   margin-right: 1rem;
 }
 .icons-container i:hover {
   transform: scale(1.2);
-  color: var(--ColorBlueDark);
 }
 .icons-container .cart-status-container {
   display: flex;
@@ -172,24 +218,26 @@ ngb-pagination .page-item.active .page-link {
   font-size: 1rem;
   margin-right: 1.1rem;
 }
+/* Cart Status */
 .cs-data {
   display: flex;
   flex-direction: row;
   align-items: center;
   color: var(--ColorWhite);
-  background: var(--ColorBlue);
+  background: var(--Color-Light-Blue);
   border-radius: 1.3rem;
-  border: 1px solid var(--ColorBlue);
+  border: 1px solid var(--Color-Light-Blue);
 }
 .cs-data p {
-  font-size: 1rem;
+  font-size: 0.9rem;
   margin: 0 0;
-  padding: 0.3rem 1rem;
+  padding: 0.3rem 0.8rem;
 }
 .cs-data span {
   background: var(--ColorWhite);
-  color: var(--ColorBlue);
-  padding: 0.3rem 0.7rem;
+  color: var(--Color-Light-Blue);
+  padding: 0.3rem 0.5rem;
+  padding-left: 0.35rem;
   border-top-right-radius: 1.3rem;
   border-bottom-right-radius: 1.3rem;
 }
@@ -199,7 +247,7 @@ ngb-pagination .page-item.active .page-link {
 ******************************/
 .banner-container {
   width: 100%;
-  height: calc(95vh - 4.5rem);
+  height: calc(90vh - 4.5rem);
   position: relative;
 }
 .banner-img-container {
@@ -254,7 +302,8 @@ ngb-pagination .page-item.active .page-link {
 ******** Category Section ********
 ******************************/
 .category-sect {
-  padding: 2rem 0rem;
+  padding: 3rem 0rem;
+  padding-bottom: 5rem;
 }
 .categories-container {
   display: grid;
@@ -266,8 +315,8 @@ ngb-pagination .page-item.active .page-link {
 }
 .cat-card {
   width: 100%;
-  height: 5rem;
-  background: var(--ColorPink);
+  height: 8rem;
+  background: var(--Color-Blue);
   display: grid;
   place-items: center;
   border-radius: 0.45rem;
@@ -275,7 +324,7 @@ ngb-pagination .page-item.active .page-link {
   transition: var(--MainTrans);
 }
 .cat-card:hover {
-  background: var(--ColorPinkDark);
+  background: var(--Color-Light-Blue);
 }
 .cat-card a {
   font-family: var(--FF-OpenSans);
@@ -309,7 +358,7 @@ ngb-pagination .page-item.active .page-link {
   width: 100%;
   height: 2rem;
   border-radius: none;
-  border: none;
+  border: 1px solid var(---Color-Orange) !important;
   background: var(--ColorWhite);
   color: var(--FontColorBlack);
   padding-left: 0.25rem;
@@ -333,7 +382,7 @@ ngb-pagination .page-item.active .page-link {
   border: none;
   border-top-right-radius: 0.15rem;
   border-bottom-right-radius: 0.15rem;
-  background-color: var(--ColorBlue);
+  background-color: var(--Color-Orange);
   color: var(--ColorWhite);
   padding: 0rem 1rem;
   cursor: pointer;
@@ -345,7 +394,7 @@ ngb-pagination .page-item.active .page-link {
   letter-spacing: 2px;
   font-weight: 300;
   font-family: var(--FF-OpenSans);
-  color: var(--ColorPinkDark);
+  color: crimson;
   text-align: center;
   padding-top: 2rem;
 }
@@ -355,11 +404,12 @@ ngb-pagination .page-item.active .page-link {
 /*  Products  */
 .product-card {
   width: 100%;
-  margin-bottom: 1.7rem;
+  margin-bottom: 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  overflow: hidden;
 }
 .product-img-container {
   width: 100%;
@@ -374,14 +424,14 @@ ngb-pagination .page-item.active .page-link {
   transition: var(--MainTrans);
 }
 .product-img:hover {
-  transform: scale(1.07);
+  transform: scale(1.035);
 }
 .product-card h1 {
   font-family: var(--FF-OpenSans);
   font-weight: 300;
   letter-spacing: 1.5px;
   font-size: 1.32rem;
-  color: var(--FontColorDark);
+  color: var(--Color-Darks-3);
   cursor: pointer;
   transition: var(--MainTrans);
 }
@@ -392,22 +442,27 @@ ngb-pagination .page-item.active .page-link {
   font-family: var(--FF-OpenSans);
   font-weight: 400;
   letter-spacing: 1.5px;
-  font-size: 1.4rem;
-  color: var(--FontColorPink);
+  font-size: 1.2rem;
+  color: var(--Color-Light-Blue);
 }
 .product-card button {
-  background: var(--ColorBlue);
-  padding: 0.5rem 1.3rem;
-  border: none;
+  background: var(--Color-Orange);
+  padding: 0.6rem 1.3rem;
+  border: 1px solid var(---Color-Orange) !important;
   outline: none;
-  border-radius: 0.45rem;
   color: var(--ColorWhite) !important;
   font-family: var(--FF-Roboto);
   letter-spacing: 1px;
   font-size: 0.95rem;
-  font-weight: 300;
-  margin-top: 0.55rem;
+  font-weight: 400;
+  margin: 0.55rem 0rem;
   box-shadow: 0px 5px 10px rgba(50, 50, 50, 0.2);
+  transition: var(--MainTrans);
+}
+.product-card button:hover {
+  border: 1px solid var(--Color-Orange) !important;
+  color: var(--Color-Orange) !important;
+  background: var(--Color-Main-White);
 }
 
 /***************************** 
@@ -742,7 +797,7 @@ ngb-pagination .page-item.active .page-link {
     width: 87%;
   }
   .icons-container {
-    width: 6.5rem;
+    width: 15rem;
   }
   .icons-container > * {
     font-size: 1.7rem;
