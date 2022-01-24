@@ -150,7 +150,8 @@ ngb-pagination .page-item.active .page-link {
 .icons-container {
   display: flex;
   justify-content: space-between;
-  width: 5rem;
+  align-items: center;
+  width: auto;
   padding: 0rem 0.3rem;
 }
 .icons-container > * {
@@ -158,10 +159,39 @@ ngb-pagination .page-item.active .page-link {
   color: var(--ColorBlue);
   cursor: pointer;
   transition: var(--MainTrans);
+  margin-right: 1rem;
 }
 .icons-container i:hover {
   transform: scale(1.2);
   color: var(--ColorBlueDark);
+}
+.icons-container .cart-status-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1rem;
+  margin-right: 1.1rem;
+}
+.cs-data {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: var(--ColorWhite);
+  background: var(--ColorBlue);
+  border-radius: 1.3rem;
+  border: 1px solid var(--ColorBlue);
+}
+.cs-data p {
+  font-size: 1rem;
+  margin: 0 0;
+  padding: 0.3rem 1rem;
+}
+.cs-data span {
+  background: var(--ColorWhite);
+  color: var(--ColorBlue);
+  padding: 0.3rem 0.7rem;
+  border-top-right-radius: 1.3rem;
+  border-bottom-right-radius: 1.3rem;
 }
 
 /***************************** 
@@ -365,9 +395,11 @@ ngb-pagination .page-item.active .page-link {
   font-size: 1.4rem;
   color: var(--FontColorPink);
 }
-.product-card a {
+.product-card button {
   background: var(--ColorBlue);
   padding: 0.5rem 1.3rem;
+  border: none;
+  outline: none;
   border-radius: 0.45rem;
   color: var(--ColorWhite) !important;
   font-family: var(--FF-Roboto);
@@ -427,13 +459,15 @@ ngb-pagination .page-item.active .page-link {
   place-items: center;
   margin-top: 2rem;
 }
-.bot-btns a {
+.bot-btns button {
   background: var(--ColorBlueDark);
   color: var(--ColorWhite) !important;
   font-family: var(--FF-OpenSans);
   font-weight: 300;
   padding: 0.7rem 1.3rem;
   font-size: 1rem;
+  outline: none;
+  border: none;
   cursor: pointer;
   transition: var(--MainTrans);
 }

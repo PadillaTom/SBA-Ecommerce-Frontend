@@ -11,7 +11,7 @@
       </div>
       <h1 routerLink="/products/{{ prod.id }}">{{ prod.name }}</h1>
       <span>{{ prod.unitPrice | currency: "EUR" }}</span>
-      <a href="#" class="primary-btn"> Add to Cart </a>
+      <button (click)="addToCart(prod)" class="primary-btn">Add to Cart</button>
     </div>
   </div>
 </div>
