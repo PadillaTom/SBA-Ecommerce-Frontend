@@ -1,7 +1,15 @@
 <div class="categories-container">
-  <div class="cat-card" *ngFor="let cat of categories">
-    <a routerLink="/category/{{ cat.id }}" routerLinkActive="active-link">
+  <div
+    routerLink="/category/{{ cat.id }}"
+    routerLinkActive="active-link"
+    class="cat-card"
+    *ngFor="let cat of categories"
+  >
+    <div class="catcard-img-container">
+      <img src="../../../assets/images/categoryPng.png" alt="cate" />
+    </div>
+    <span>
       {{ cat.category }}
-    </a>
+    </span>
   </div>
 </div>
