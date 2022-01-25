@@ -1,25 +1,3 @@
-<div class="general-cards">
-  <div *ngFor="let prod of products" class="product-card-container">
-    <div class="product-card">
-      <div class="product-img-container">
-        <img
-          src="{{ prod.imageUrl }}"
-          alt="{{ prod.name }}"
-          class="product-img"
-          routerLink="/products/{{ prod.id }}"
-        />
-      </div>
-      <h1 routerLink="/products/{{ prod.id }}">{{ prod.name }}</h1>
-      <span>{{ prod.unitPrice | currency: "EUR" }}</span>
-      <button (click)="addToCart(prod)" class="primary-btn">Add to Cart</button>
-    </div>
-  </div>
-</div>
-<!-- If NO PRODUCTS Found -->
-<div *ngIf="products?.length == 0" class="products-not-found">
-  No Products Found.
-</div>
-
 <!-- Pagination -->
 <div class="products-list-controllers">
   <div class="pagination-container">
@@ -41,4 +19,26 @@
       <option>20</option>
     </select>
   </div>
+</div>
+<!-- Cards -->
+<div class="general-cards">
+  <div *ngFor="let prod of products" class="product-card-container">
+    <div class="product-card">
+      <div class="product-img-container">
+        <img
+          src="{{ prod.imageUrl }}"
+          alt="{{ prod.name }}"
+          class="product-img"
+          routerLink="/products/{{ prod.id }}"
+        />
+      </div>
+      <h1 routerLink="/products/{{ prod.id }}">{{ prod.name }}</h1>
+      <span>{{ prod.unitPrice | currency: "EUR" }}</span>
+      <button (click)="addToCart(prod)" class="primary-btn">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<!-- If NO PRODUCTS Found -->
+<div *ngIf="products?.length == 0" class="products-not-found">
+  No Products Found.
 </div>
