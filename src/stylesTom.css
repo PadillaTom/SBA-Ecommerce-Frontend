@@ -691,6 +691,8 @@ ngb-pagination .page-item.active .page-link {
   }
   .banner-text button {
     font-size: 2.2rem;
+    bottom: 15%;
+    transform: translate(-50%, 15%);
   }
   /* Categories */
   .category-sect {
@@ -803,6 +805,11 @@ ngb-pagination .page-item.active .page-link {
   }
   .icons-container > * {
     font-size: 1.7rem;
+  }
+  /* Banner */
+  .banner-text button {
+    bottom: 9%;
+    transform: translate(-50%, 9%);
   }
   /* Categories */
   .categories-container {
