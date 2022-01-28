@@ -151,6 +151,7 @@ ngb-pagination .page-item.active .page-link {
 }
 .logo-container {
   padding: 0rem 0.3rem;
+  cursor: pointer;
 }
 .logo-container > * {
   width: 75%;

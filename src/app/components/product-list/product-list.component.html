@@ -1,44 +1,78 @@
-<!-- Pagination -->
-<div class="products-list-controllers">
-  <div class="pagination-container">
-    <ngb-pagination
-      [(page)]="thePageNumber"
-      [pageSize]="thePageSize"
-      [collectionSize]="theTotalElements"
-      [maxSize]="2"
-      [boundaryLinks]="false"
-      (pageChange)="listProducts()"
-    ></ngb-pagination>
+<!-- Banner -->
+<div class="banner-container">
+  <div class="banner-img-container">
+    <div class="banner-img-overlay"></div>
+    <img src="assets/images/bgimage2.jpeg" alt="SBA Store" />
   </div>
-  <div class="pagesize-container">
-    <span>Page Size:</span>
-    <select (change)="updatePageSize($any($event.target).value)">
-      <option selected="true">5</option>
-      <option>10</option>
-      <option>15</option>
-      <option>20</option>
-    </select>
-  </div>
-</div>
-<!-- Cards -->
-<div class="general-cards">
-  <div *ngFor="let prod of products" class="product-card-container">
-    <div class="product-card">
-      <div class="product-img-container">
-        <img
-          src="{{ prod.imageUrl }}"
-          alt="{{ prod.name }}"
-          class="product-img"
-          routerLink="/products/{{ prod.id }}"
-        />
-      </div>
-      <h1 routerLink="/products/{{ prod.id }}">{{ prod.name }}</h1>
-      <span>{{ prod.unitPrice | currency: "EUR" }}</span>
-      <button (click)="addToCart(prod)" class="primary-btn">Add to Cart</button>
+  <div class="banner-text-container">
+    <div class="banner-text">
+      <h1>SBA</h1>
+      <span>Online Store</span>
+      <br />
+      <button>Shop Now!</button>
     </div>
   </div>
 </div>
-<!-- If NO PRODUCTS Found -->
-<div *ngIf="products?.length == 0" class="products-not-found">
-  No Products Found.
-</div>
+<!-- END Banner -->
+
+<!-- Categories -->
+<section class="section category-sect">
+  <h1 class="section-title">Categories</h1>
+  <app-product-category-menu></app-product-category-menu>
+</section>
+<!-- END Categories -->
+
+<!-- Products -->
+<section class="section products-home-sect" id="products-section-homepage">
+  <h1 class="section-title">Products</h1>
+  <div class="search-container">
+    <app-search></app-search>
+  </div>
+  <!-- Pagination -->
+  <div class="products-list-controllers">
+    <div class="pagination-container">
+      <ngb-pagination
+        [(page)]="thePageNumber"
+        [pageSize]="thePageSize"
+        [collectionSize]="theTotalElements"
+        [maxSize]="2"
+        [boundaryLinks]="false"
+        (pageChange)="listProducts()"
+      ></ngb-pagination>
+    </div>
+    <div class="pagesize-container">
+      <span>Page Size:</span>
+      <select (change)="updatePageSize($any($event.target).value)">
+        <option selected="true">5</option>
+        <option>10</option>
+        <option>15</option>
+        <option>20</option>
+      </select>
+    </div>
+  </div>
+  <!-- Cards -->
+  <div class="general-cards">
+    <div *ngFor="let prod of products" class="product-card-container">
+      <div class="product-card">
+        <div class="product-img-container">
+          <img
+            src="{{ prod.imageUrl }}"
+            alt="{{ prod.name }}"
+            class="product-img"
+            routerLink="/products/{{ prod.id }}"
+          />
+        </div>
+        <h1 routerLink="/products/{{ prod.id }}">{{ prod.name }}</h1>
+        <span>{{ prod.unitPrice | currency: "EUR" }}</span>
+        <button (click)="addToCart(prod)" class="primary-btn">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- If NO PRODUCTS Found -->
+  <div *ngIf="products?.length == 0" class="products-not-found">
+    No Products Found.
+  </div>
+  <!-- END Products -->
+</section>
