@@ -2,7 +2,7 @@
   <!-- Navbar -->
   <nav class="nav-container">
     <div class="nav-center">
-      <div class="logo-container">
+      <div class="logo-container" routerLink="/">
         <img src="/assets/images/SBALogo.png" alt="SBA Store" />
       </div>
       <div class="icons-container">
@@ -15,48 +15,20 @@
   <!-- END Navbar -->
 
   <main class="main-sect">
-    <!-- Banner -->
-    <div class="banner-container">
-      <div class="banner-img-container">
-        <div class="banner-img-overlay"></div>
-        <img src="assets/images/bgimage2.jpeg" alt="SBA Store" />
-      </div>
-      <div class="banner-text-container">
-        <div class="banner-text">
-          <h1>SBA</h1>
-          <span>Online Store</span>
-          <br />
-          <button>Shop Now!</button>
-        </div>
-      </div>
-    </div>
-    <!-- END Banner -->
-
-    <!-- Categories -->
-    <section class="section category-sect">
-      <h1 class="section-title">Categories</h1>
-      <app-product-category-menu></app-product-category-menu>
-    </section>
-    <!-- END Categories -->
-
-    <!-- Products -->
-    <section class="section products-home-sect">
-      <h1 class="section-title">Products</h1>
-      <div class="search-container">
-        <app-search></app-search>
-      </div>
-      <router-outlet></router-outlet>
-    </section>
-    <!-- END Products -->
+    <router-outlet></router-outlet>
   </main>
+
+  <!-- Footer  -->
   <hr />
   <footer class="footer-container">
     <div class="footer-center">
-      <h2 class="footer-title">Site Map</h2>
       <div class="footer-top">
-        <a href="#">About Us</a>
-        <a href="#">Contact Us</a>
-        <a href="#">Help</a>
+        <h2 class="footer-title">Site Map</h2>
+        <div class="footer-links">
+          <a href="#">About Us</a>
+          <a href="#">Contact Us</a>
+          <a href="#">Help</a>
+        </div>
       </div>
       <div class="footer-bot">
         <a href="#">by PadillaTom</a>
