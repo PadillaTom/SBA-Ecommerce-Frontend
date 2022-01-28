@@ -65,6 +65,9 @@ a {
   width: 95%;
   margin: 0 auto;
 }
+.singlepage {
+  padding-top: 3rem;
+}
 .section-title {
   text-align: center;
   font-size: 1.55rem;
@@ -83,7 +86,6 @@ a {
   letter-spacing: 1.1px;
   color: crimson;
   cursor: pointer;
-  margin-top: 2.8rem;
 }
 ul {
   list-style: none;
@@ -151,6 +153,7 @@ ngb-pagination .page-item.active .page-link {
 }
 .logo-container {
   padding: 0rem 0.3rem;
+  cursor: pointer;
 }
 .logo-container > * {
   width: 75%;
@@ -481,6 +484,8 @@ ngb-pagination .page-item.active .page-link {
 .details-bot {
   display: flex;
   flex-direction: column;
+  width: 95%;
+  margin: 0 auto;
   margin-top: 2rem;
 }
 .details-bot .bot-desc h2 {
@@ -552,10 +557,15 @@ ngb-pagination .page-item.active .page-link {
 .footer-top {
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+.footer-links {
+  display: flex;
+  flex-direction: column;
   margin: 0.25rem 0rem;
   text-align: center;
 }
-.footer-top a {
+.footer-links a {
   font-family: var(--FF-Roboto);
   font-weight: 300;
   letter-spacing: 1.5px;
@@ -667,6 +677,9 @@ ngb-pagination .page-item.active .page-link {
 
 @media screen and (min-width: 980px) {
   /* Globals */
+  .singlepage {
+    padding-top: 5.5rem;
+  }
   .section-title {
     font-size: 2rem;
     letter-spacing: 2.2px;
@@ -691,6 +704,8 @@ ngb-pagination .page-item.active .page-link {
   }
   .banner-text button {
     font-size: 2.2rem;
+    bottom: 15%;
+    transform: translate(-50%, 15%);
   }
   /* Categories */
   .category-sect {
@@ -758,11 +773,19 @@ ngb-pagination .page-item.active .page-link {
     letter-spacing: 2px;
   }
   /* Footer */
-  .footer-title {
-    font-size: 2rem;
+  .footer-top {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 45%;
+    margin: 0 auto;
+    padding-bottom: 1.5rem;
   }
-  .footer-top a {
-    font-size: 1.5rem;
+
+  .footer-title {
+    font-size: 1.4rem;
+  }
+  .footer-links a {
+    font-size: 1.3rem;
   }
   .footer-bot {
     font-size: 1.1rem;
@@ -803,6 +826,11 @@ ngb-pagination .page-item.active .page-link {
   }
   .icons-container > * {
     font-size: 1.7rem;
+  }
+  /* Banner */
+  .banner-text button {
+    bottom: 9%;
+    transform: translate(-50%, 9%);
   }
   /* Categories */
   .categories-container {
