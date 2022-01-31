@@ -548,11 +548,11 @@ ngb-pagination .page-item.active .page-link {
 }
 table.table.table-bordered {
   border: 1px solid var(--Color-Darks-4);
-  background: var(var(--Color-Main-White));
+  background: var(--Color-Main-White);
 }
 .table-bordered td,
 .table-bordered th {
-  border: 1px solid var(--Color-Beige);
+  border: 1px solid var(--Color-Pink);
 }
 table.table.table-bordered th {
   background: var(--Color-Pink);
@@ -562,6 +562,18 @@ table.table.table-bordered th {
   letter-spacing: 1px;
   font-weight: 400;
   padding: 0.4rem;
+}
+tr td img {
+  width: 17rem;
+}
+.items select {
+  width: 100px;
+  height: 40px;
+  border-radius: 40px;
+  padding-left: 15px;
+  margin-bottom: 10px;
+  outline: 0;
+  margin-left: 5px;
 }
 /***************************** 
 ******** Footer ********
