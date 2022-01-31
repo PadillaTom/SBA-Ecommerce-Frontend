@@ -1,6 +1,34 @@
-<section
-  style="display: grid; place-items: center"
-  class="section singlepage cart-details-sect"
->
-  <h1>Cart Details</h1>
+<section class="section singlepage cart-details-sect">
+  <h1 class="section-title">Cart Details</h1>
+  <!-- Mobile -->
+  <div class="table-container"></div>
+  <!-- Desktop -->
+  <div class="desktop-table-container">
+    <table class="table table-bordered">
+      <tr>
+        <th width="20%">Image</th>
+        <th width="50%">Details</th>
+        <th width="30%"></th>
+      </tr>
+      <tr *ngFor="let cartItem of cartItems">
+        <td>
+          <img src="{{ cartItem.imageUrl }}" alt="{{ cartItem.name }}" />
+        </td>
+        <td>
+          <p>
+            {{ cartItem.name }}
+          </p>
+          <p>
+            {{ cartItem.unitPrice | currency: "EUR" }}
+          </p>
+        </td>
+        <td>
+          <div class="items">
+            <label for=""> Quantity: </label>
+            {{ cartItem.quantity }}
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
 </section>

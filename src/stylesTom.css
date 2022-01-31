@@ -30,7 +30,6 @@ Variables
   /* Others */
   --MainTrans: 0.3s linear all;
   /* ============= */
-
   --Color-Pink: #f3cbd1;
   --Color-Beige: #f4f3ec;
   --Color-Darks-1: #000000;
@@ -530,7 +529,40 @@ ngb-pagination .page-item.active .page-link {
   background: var(--Color-Main-White);
   color: var(--Color-Orange) !important;
 }
-
+/***************************** 
+******** Cart Details ********
+******************************/
+/* Mobile */
+.desktop-table-container {
+  display: none;
+}
+/* Desktop 980 + */
+@media screen and (min-width: 980px) {
+  .desktop-table-container {
+    display: block;
+  }
+}
+.desktop-table-container {
+  width: 95%;
+  margin: 0 auto;
+}
+table.table.table-bordered {
+  border: 1px solid var(--Color-Darks-4);
+  background: var(var(--Color-Main-White));
+}
+.table-bordered td,
+.table-bordered th {
+  border: 1px solid var(--Color-Beige);
+}
+table.table.table-bordered th {
+  background: var(--Color-Pink);
+  color: var(--Color-Main-White);
+  font-size: 1rem;
+  font-family: var(--FF-OpenSans);
+  letter-spacing: 1px;
+  font-weight: 400;
+  padding: 0.4rem;
+}
 /***************************** 
 ******** Footer ********
 ******************************/
