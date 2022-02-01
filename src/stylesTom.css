@@ -281,6 +281,7 @@ ngb-pagination .page-item.active .page-link {
   bottom: 20%;
   left: 50%;
   transform: translate(-50%, 20%);
+  white-space: nowrap;
 }
 .banner-text button:hover {
   background: var(--Color-Main-White);
@@ -550,15 +551,7 @@ ngb-pagination .page-item.active .page-link {
   height: 60vh;
 }
 /* Mobile */
-.desktop-table-container {
-  display: none;
-}
-/* Desktop 980 + */
-@media screen and (min-width: 980px) {
-  .desktop-table-container {
-    display: block;
-  }
-}
+
 .desktop-table-container {
   width: 95%;
   margin: 0 auto;
