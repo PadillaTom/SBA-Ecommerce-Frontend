@@ -1,6 +1,69 @@
-<section
-  style="display: grid; place-items: center"
-  class="section singlepage cart-details-sect"
->
-  <h1>Cart Details</h1>
+<section class="section singlepage cart-details-sect">
+  <div *ngIf="cartItems.length > 0">
+    <!-- Desktop -->
+    <div class="desktop-table-container">
+      <table class="table">
+        <tr>
+          <th width="10%">Image</th>
+          <th width="50%">Details</th>
+          <th width="40"></th>
+        </tr>
+        <tr *ngFor="let cartItem of cartItems">
+          <td>
+            <img
+              src="{{ cartItem.imageUrl }}"
+              alt="{{ cartItem.name }}"
+              class="table-image"
+            />
+          </td>
+          <td>
+            <p>
+              {{ cartItem.name }}
+            </p>
+            <span>
+              {{ cartItem.unitPrice | currency: "EUR" }}
+            </span>
+            <h2 (click)="removeFromCart(cartItem)">Remove</h2>
+          </td>
+          <td>
+            <div class="items">
+              Quantity:
+              <div class="qty-btns-container">
+                <div>
+                  <button (click)="incrementQty(cartItem)" class="qty-btn">
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </div>
+                <div class="qty-text">
+                  {{ cartItem.quantity }}
+                </div>
+                <div>
+                  <button (click)="decreaseQty(cartItem)" class="qty-btn">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <p class="mt-2">
+              Subtotal:
+              {{ cartItem.quantity * cartItem.unitPrice | currency: "EUR" }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2"></td>
+          <td style="font-weight: bold">
+            <p>Total Quantity: {{ totalQty }}</p>
+            <p>Shipping: FREE</p>
+            <p>Total Price: {{ totalPrice | currency: "EUR" }}</p>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <!-- END Table -->
+  <!-- If Empty -->
+  <div *ngIf="cartItems.length == 0" class="empty-cart" role="alert">
+    Your cart is Empty
+  </div>
 </section>
