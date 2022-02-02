@@ -4,8 +4,8 @@
   <div class="cform-container container-fluid">
     <form [formGroup]="checkoutFormGroup" (ngSubmit)="onSubmit()">
       <!-- Customer FormGroup -->
+      <h3>Customer</h3>
       <div class="form-area" formGroupName="customer">
-        <h3>Customer</h3>
         <!-- Single Input -->
         <div class="single-input-container">
           <div class="single-label">
@@ -48,8 +48,8 @@
       <!-- ********** -->
 
       <!-- Shipping FormGroup -->
+      <h3>Shipping Address</h3>
       <div class="form-area" formGroupName="shippingAddress">
-        <h3>Shipping Address</h3>
         <!-- Single Input -->
         <div class="single-input-container">
           <div class="single-label">
@@ -132,8 +132,8 @@
       <!--  DISPLAY CONDITIONALLY TO CHECKBOXK -->
 
       <!-- Billing FormGroup -->
+      <h3>Billing Address</h3>
       <div class="form-area" formGroupName="billingAddress">
-        <h3>Billing Address</h3>
         <!-- Single Input -->
         <div class="single-input-container">
           <div class="single-label">
@@ -206,8 +206,8 @@
       <!-- ********** -->
 
       <!-- Credit Card FormGroup -->
+      <h3>Credit Card Information</h3>
       <div class="form-area" formGroupName="creditCard">
-        <h3>Credit Card Information</h3>
         <!-- Single Input -->
         <div class="single-input-container">
           <div class="single-label">
@@ -297,7 +297,9 @@
       </div>
       <!-- Submit -->
       <div class="text-center cform-submit">
-        <button type="submit" class="btn btn-warning">Complete Payment</button>
+        <button type="submit" class="btn btn-warning btn-size">
+          Complete Payment
+        </button>
       </div>
     </form>
   </div>

@@ -729,6 +729,9 @@ form h3 {
   border: none;
   border-bottom: 1px solid var(--Color-Darks-4);
 }
+.checked-address {
+  margin-bottom: 2.5rem;
+}
 .checked-address label {
   font-family: var(--FF-OpenSans);
   font-size: 0.7rem;
@@ -740,16 +743,69 @@ form h3 {
   align-items: center;
   justify-content: space-around;
   margin: 0 auto;
-  width: 75%;
+  width: 17rem;
 }
 .cform-submit {
   margin-bottom: 2rem;
 }
-/* @media screen and (min-width: 680px) {
+@media screen and (min-width: 680px) {
   .form-area {
-    display: flex !important;
+    display: flex;
+    flex-direction: column;
   }
-} */
+  .single-input-container {
+    width: 22rem;
+    margin: 0.25rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+@media screen and (min-width: 980px) {
+  form h3 {
+    padding-bottom: 1.5rem;
+    padding-top: 4rem;
+  }
+  .form-area {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    gap: 1rem;
+    width: 52rem;
+    margin: 0 auto;
+  }
+  .single-input-container {
+    width: 22rem;
+    margin: 0;
+  }
+  .single-label {
+    font-size: 1.05rem;
+  }
+  .checked-address {
+    margin-bottom: 2.5rem;
+    margin-top: 1.7rem;
+  }
+  .checked-address label {
+    font-size: 0.9rem;
+    width: 20rem;
+  }
+  .order-details-box {
+    display: flex;
+    margin-top: -2rem;
+    margin-bottom: 2rem;
+  }
+  .order-details-box h3 {
+    font-weight: 400;
+    font-size: 1.7rem;
+    margin-bottom: 0rem;
+  }
+  .order-details-box p {
+    font-size: 1.3rem;
+  }
+  .btn-size {
+    font-size: 1.3rem !important;
+  }
+}
 /***************************** 
 ******** Footer ********
 ******************************/
