@@ -745,6 +745,11 @@ form h3 {
 .cform-submit {
   margin-bottom: 2rem;
 }
+/* @media screen and (min-width: 680px) {
+  .form-area {
+    display: flex !important;
+  }
+} */
 /***************************** 
 ******** Footer ********
 ******************************/
