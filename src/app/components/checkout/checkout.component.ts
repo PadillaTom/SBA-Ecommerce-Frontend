@@ -9,7 +9,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class CheckoutComponent implements OnInit {
   // Form:
   checkoutFormGroup: FormGroup;
-
+  isChecked: boolean = true;
   totalPrice: number = 0;
   totalQuantity: number = 0;
 
@@ -59,6 +59,7 @@ export class CheckoutComponent implements OnInit {
     console.log(this.checkoutFormGroup.get('shippingAddress')?.value);
     console.log(this.checkoutFormGroup.get('billingAddress')?.value);
   }
+
   // Shipping === Billing
   useSameShippingAsBilling(event: any) {
     if (event.target.checked) {
