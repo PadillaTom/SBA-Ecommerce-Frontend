@@ -35,6 +35,15 @@ export class CartService {
     this.computeCartTotals();
   }
 
+  decreaseQuantity(myCartItem: CartItem) {
+    myCartItem.quantity--;
+    if (myCartItem.quantity === 0) {
+      this.removeFromCart(myCartItem);
+    } else {
+      this.computeCartTotals();
+    }
+  }
+
   computeCartTotals() {
     let totalPriceValue: number = 0;
     let totalQuantityValue: number = 0;
@@ -47,5 +56,17 @@ export class CartService {
     // Send DATA to Subscribers:
     this.totalPrice.next(totalPriceValue);
     this.totalQuantity.next(totalQuantityValue);
+  }
+
+  removeFromCart(myCartItem: CartItem) {
+    // Get Index of myCartItem in the Array:
+    const myIndex = this.cartItems.findIndex(
+      (temp) => temp.id === myCartItem.id
+    );
+    // Once found REMOVE IT:
+    if (myIndex > -1) {
+      this.cartItems.splice(myIndex, 1);
+      this.computeCartTotals();
+    }
   }
 }

@@ -30,7 +30,6 @@ Variables
   /* Others */
   --MainTrans: 0.3s linear all;
   /* ============= */
-
   --Color-Pink: #f3cbd1;
   --Color-Beige: #f4f3ec;
   --Color-Darks-1: #000000;
@@ -178,10 +177,16 @@ ngb-pagination .page-item.active .page-link {
 }
 .icons-container .cart-status-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   font-size: 1rem;
-  margin-right: 1.1rem;
+}
+.icons-container .cart-status-container i {
+  font-size: 1.4rem;
+  color: var(--Color-Light-Green);
+  cursor: pointer;
+  transition: var(--MainTrans);
+  margin-left: 0.3rem;
 }
 /* Cart Status */
 .cs-data {
@@ -276,6 +281,7 @@ ngb-pagination .page-item.active .page-link {
   bottom: 20%;
   left: 50%;
   transform: translate(-50%, 20%);
+  white-space: nowrap;
 }
 .banner-text button:hover {
   background: var(--Color-Main-White);
@@ -530,6 +536,131 @@ ngb-pagination .page-item.active .page-link {
   background: var(--Color-Main-White);
   color: var(--Color-Orange) !important;
 }
+/***************************** 
+******** Cart Details ********
+******************************/
+
+.empty-cart {
+  font-family: var(--FF-OpenSans);
+  font-size: 2rem;
+  color: crimson;
+  letter-spacing: 1.3px;
+  font-weight: 300;
+  display: grid;
+  place-items: center;
+  height: 60vh;
+}
+/* Table */
+.desktop-table-container {
+  width: 95%;
+  margin: 0 auto;
+}
+.table th,
+.table td {
+  border: 1px solid var(--Color-Pink) !important;
+  border-collapse: collapse !important;
+}
+.table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.table tr:hover {
+  background-color: rgb(228, 228, 228);
+}
+.table th {
+  padding: 0.7rem 0rem; /**/
+  text-align: center; /**/
+  background-color: var(--Color-Pink);
+  color: white;
+  font-size: 0.95rem; /**/
+  font-family: var(--FF-OpenSans);
+  font-weight: 400;
+}
+.table-image {
+  width: 9rem; /**/
+}
+.table td p {
+  font-family: var(--FF-OpenSans);
+  font-size: 0.95rem; /**/
+  text-align: left; /**/
+  letter-spacing: 1px;
+  font-weight: 300;
+  color: var(--Color-Darks-3);
+}
+.table td span {
+  font-family: var(--FF-OpenSans);
+  font-size: 0.9rem; /**/
+  text-align: center; /**/
+  letter-spacing: 1px;
+  font-weight: 400;
+  color: crimson;
+}
+/* Qty Btns */
+.table td h2 {
+  font-family: var(--FF-OpenSans);
+  font-size: 0.9rem;
+  text-align: left;
+  letter-spacing: 1px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: -0.6rem;
+}
+
+.items {
+  font-family: var(--FF-OpenSans);
+  font-size: 1rem; /**/
+  text-align: center; /**/
+  letter-spacing: 1px;
+  font-weight: 300;
+  color: var(--Color-Darks-3);
+}
+.qty-btns-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 6.5rem;
+}
+.qty-btn {
+  padding: 0.3rem 0.3rem;
+  background: var(--Color-Pink);
+  outline: none;
+  border: none;
+  display: grid;
+  place-items: center;
+  color: var(--Color-Main-White);
+}
+.qty-text {
+  font-size: 1.1rem;
+  margin: 0rem 0.2rem;
+  font-weight: 400;
+}
+@media screen and (min-width: 668px) {
+  .table th {
+    font-size: 1rem;
+    text-align: left;
+    padding: 1rem 0.7rem;
+  }
+  .table-image {
+    width: 12rem;
+  }
+  .table td p {
+    padding-left: 1rem;
+    font-size: 1.3rem;
+    text-align: left;
+  }
+  .table td span {
+    padding-left: 1rem;
+    font-size: 1.1rem;
+    text-align: left;
+  }
+  .table td h2 {
+    padding-left: 1rem;
+  }
+  .items {
+    padding-left: 1rem;
+    font-size: 1.2rem;
+    text-align: left;
+  }
+}
 
 /***************************** 
 ******** Footer ********
@@ -663,6 +794,10 @@ ngb-pagination .page-item.active .page-link {
     padding: 0.9rem 1.5rem;
     font-size: 1.1rem;
   }
+  /* Cart Details */
+  .empty-cart {
+    height: 58vh;
+  }
   /* Footer */
   .footer-title {
     font-size: 1.45rem;
@@ -771,6 +906,10 @@ ngb-pagination .page-item.active .page-link {
     padding: 0.9rem 2rem;
     font-size: 1.2rem;
     letter-spacing: 2px;
+  }
+  /* Cart Details */
+  .empty-cart {
+    height: 54vh;
   }
   /* Footer */
   .footer-top {
