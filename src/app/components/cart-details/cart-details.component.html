@@ -4,9 +4,9 @@
     <div class="desktop-table-container">
       <table class="table">
         <tr>
-          <th width="20%">Image</th>
+          <th width="10%">Image</th>
           <th width="50%">Details</th>
-          <th width="30%"></th>
+          <th width="40"></th>
         </tr>
         <tr *ngFor="let cartItem of cartItems">
           <td>
@@ -23,11 +23,26 @@
             <span>
               {{ cartItem.unitPrice | currency: "EUR" }}
             </span>
+            <h2 (click)="removeFromCart(cartItem)">Remove</h2>
           </td>
           <td>
             <div class="items">
-              <label> Quantity: </label>
-              {{ cartItem.quantity }}
+              Quantity:
+              <div class="qty-btns-container">
+                <div>
+                  <button (click)="incrementQty(cartItem)" class="qty-btn">
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </div>
+                <div class="qty-text">
+                  {{ cartItem.quantity }}
+                </div>
+                <div>
+                  <button (click)="decreaseQty(cartItem)" class="qty-btn">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                </div>
+              </div>
             </div>
             <p class="mt-2">
               Subtotal:

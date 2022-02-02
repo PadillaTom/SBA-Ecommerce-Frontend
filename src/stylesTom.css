@@ -550,8 +550,7 @@ ngb-pagination .page-item.active .page-link {
   place-items: center;
   height: 60vh;
 }
-/* Mobile */
-
+/* Table */
 .desktop-table-container {
   width: 95%;
   margin: 0 auto;
@@ -568,39 +567,99 @@ ngb-pagination .page-item.active .page-link {
   background-color: rgb(228, 228, 228);
 }
 .table th {
-  padding: 1rem 0.4rem;
-  text-align: left;
+  padding: 0.7rem 0rem; /**/
+  text-align: center; /**/
   background-color: var(--Color-Pink);
   color: white;
-  font-size: 1rem;
+  font-size: 0.95rem; /**/
   font-family: var(--FF-OpenSans);
   font-weight: 400;
 }
 .table-image {
-  width: 12rem;
+  width: 9rem; /**/
 }
 .table td p {
   font-family: var(--FF-OpenSans);
-  font-size: 1.05rem;
+  font-size: 0.95rem; /**/
+  text-align: left; /**/
   letter-spacing: 1px;
   font-weight: 300;
   color: var(--Color-Darks-3);
 }
 .table td span {
   font-family: var(--FF-OpenSans);
-  font-size: 1rem;
+  font-size: 0.9rem; /**/
+  text-align: center; /**/
   letter-spacing: 1px;
   font-weight: 400;
   color: crimson;
 }
-.items {
-}
-.items label {
+/* Qty Btns */
+.table td h2 {
   font-family: var(--FF-OpenSans);
-  font-size: 1.2rem;
+  font-size: 0.9rem;
+  text-align: left;
+  letter-spacing: 1px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: -0.6rem;
+}
+
+.items {
+  font-family: var(--FF-OpenSans);
+  font-size: 1rem; /**/
+  text-align: center; /**/
   letter-spacing: 1px;
   font-weight: 300;
   color: var(--Color-Darks-3);
+}
+.qty-btns-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 6.5rem;
+}
+.qty-btn {
+  padding: 0.3rem 0.3rem;
+  background: var(--Color-Pink);
+  outline: none;
+  border: none;
+  display: grid;
+  place-items: center;
+  color: var(--Color-Main-White);
+}
+.qty-text {
+  font-size: 1.1rem;
+  margin: 0rem 0.2rem;
+  font-weight: 400;
+}
+@media screen and (min-width: 668px) {
+  .table th {
+    font-size: 1rem;
+    text-align: left;
+    padding: 1rem 0.7rem;
+  }
+  .table-image {
+    width: 12rem;
+  }
+  .table td p {
+    padding-left: 1rem;
+    font-size: 1.3rem;
+    text-align: left;
+  }
+  .table td span {
+    padding-left: 1rem;
+    font-size: 1.1rem;
+    text-align: left;
+  }
+  .table td h2 {
+    padding-left: 1rem;
+  }
+  .items {
+    padding-left: 1rem;
+    font-size: 1.2rem;
+    text-align: left;
+  }
 }
 
 /***************************** 
