@@ -604,7 +604,6 @@ ngb-pagination .page-item.active .page-link {
   cursor: pointer;
   margin-top: -0.6rem;
 }
-
 .items {
   font-family: var(--FF-OpenSans);
   font-size: 1rem; /**/
@@ -617,7 +616,7 @@ ngb-pagination .page-item.active .page-link {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 6.5rem;
+  overflow: hidden;
 }
 .qty-btn {
   padding: 0.3rem 0.3rem;
@@ -659,6 +658,9 @@ ngb-pagination .page-item.active .page-link {
     padding-left: 1rem;
     font-size: 1.2rem;
     text-align: left;
+  }
+  .qty-btns-container {
+    width: 6.5rem;
   }
 }
 
