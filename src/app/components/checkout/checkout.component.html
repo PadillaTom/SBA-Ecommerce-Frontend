@@ -14,6 +14,19 @@
           <div class="single-input">
             <div class="input-space">
               <input type="text" formControlName="firstName" />
+              <div
+                *ngIf="
+                  firstName.invalid && (firstName.dirty || firstName.touched)
+                "
+                class="alert alert-danger mt-1"
+              >
+                <div *ngIf="firstName.errors.required">
+                  This field is required.
+                </div>
+                <div *ngIf="firstName.errors.minlength">
+                  Minimun 2 characters
+                </div>
+              </div>
             </div>
           </div>
         </div>
