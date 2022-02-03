@@ -1,0 +1,329 @@
+<section class="section singlepage">
+  <h1 class="section-title">Checkout</h1>
+
+  <div class="cform-container container-fluid">
+    <form [formGroup]="checkoutFormGroup" (ngSubmit)="onSubmit()">
+      <!-- Customer FormGroup -->
+      <h3>Customer</h3>
+      <div class="form-area" formGroupName="customer">
+        <!-- Single Input -->
+        <div class="single-input-container">
+          <div class="single-label">
+            <label>First Name</label>
+          </div>
+          <div class="single-input">
+            <div class="input-space">
+              <input type="text" formControlName="firstName" />
+            </div>
+          </div>
+        </div>
+        <!-- End Single Input -->
+        <!-- Single Input -->
+        <div class="single-input-container">
+          <div class="single-label">
+            <label>Last Name</label>
+          </div>
+          <div class="single-input">
+            <div class="input-space">
+              <input type="text" formControlName="lastName" />
+            </div>
+          </div>
+        </div>
+        <!-- End Single Input -->
+        <!-- Single Input -->
+        <div class="single-input-container">
+          <div class="single-label">
+            <label>Email</label>
+          </div>
+          <div class="single-input">
+            <div class="input-space">
+              <input type="text" formControlName="email" />
+            </div>
+          </div>
+        </div>
+        <!-- End Single Input -->
+      </div>
+      <!-- End Customer FormGroup -->
+
+      <!-- ********** -->
+
+      <!-- Shipping FormGroup -->
+      <h3>Shipping Address</h3>
+      <div class="form-area" formGroupName="shippingAddress">
+        <!-- Single Input -->
+        <div class="single-input-container">
+          <div class="single-label">
+            <label>Country</label>
+          </div>
+          <div class="single-input">
+            <div class="input-space">
+              <select
+                formControlName="country"
+                (change)="getStates('shippingAddress')"
+              >
+                <option *ngFor="let country of countries" [ngValue]="country">
+                  {{ country.name }}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <!-- End Single Input -->
+        <!-- Single Input -->
+        <div class="single-input-container">
+          <div class="single-label">
+            <label>City</label>
+          </div>
+          <div class="single-input">
+            <div class="input-space">
+              <input type="text" formControlName="city" />
+            </div>
+          </div>
+        </div>
+        <!-- End Single Input -->
+        <!-- Single Input -->
+        <div class="single-input-container">
+          <div class="single-label">
+            <label>Street</label>
+          </div>
+          <div class="single-input">
+            <div class="input-space">
+              <input type="text" formControlName="street" />
+            </div>
+          </div>
+        </div>
+        <!-- End Single Input -->
+        <!-- Single Input -->
+        <div class="single-input-container">
+          <div class="single-label">
+            <label>State</label>
+          </div>
+          <div class="single-input">
+            <div class="input-space">
+              <select formControlName="state">
+                <option
+                  *ngFor="let state of shippingAddressStates"
+                  [ngValue]="state"
+                >
+                  {{ state.name }}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <!-- End Single Input -->
+        <!-- Single Input -->
+        <div class="single-input-container">
+          <div class="single-label">
+            <label>ZIP Code</label>
+          </div>
+          <div class="single-input">
+            <div class="input-space">
+              <input type="text" formControlName="zipCode" />
+            </div>
+          </div>
+        </div>
+        <!-- End Single Input -->
+      </div>
+      <!-- End Shipping FormGroup -->
+
+      <!-- ********** -->
+      <div class="input-space checked-address">
+        <label class="au-checkbox">
+          <input type="checkbox" (change)="useSameShippingAsBilling($event)" />
+          <span class="au-checkmark"></span>
+          Shipping Address is Billing Address?
+        </label>
+      </div>
+      <!-- ********** -->
+
+      <!--  DISPLAY CONDITIONALLY TO CHECKBOXK -->
+
+      <!-- Billing FormGroup -->
+      <h3>Billing Address</h3>
+      <div class="form-area" formGroupName="billingAddress">
+        <!-- Single Input -->
+        <div class="single-input-container">
+          <div class="single-label">
+            <label>Country</label>
+          </div>
+          <div class="single-input">
+            <div class="input-space">
+              <select
+                formControlName="country"
+                (change)="getStates('billingAddress')"
+              >
+                <option *ngFor="let country of countries" [ngValue]="country">
+                  {{ country.name }}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <!-- End Single Input -->
+        <!-- Single Input -->
+        <div class="single-input-container">
+          <div class="single-label">
+            <label>City</label>
+          </div>
+          <div class="single-input">
+            <div class="input-space">
+              <input type="text" formControlName="city" />
+            </div>
+          </div>
+        </div>
+        <!-- End Single Input -->
+        <!-- Single Input -->
+        <div class="single-input-container">
+          <div class="single-label">
+            <label>Street</label>
+          </div>
+          <div class="single-input">
+            <div class="input-space">
+              <input type="text" formControlName="street" />
+            </div>
+          </div>
+        </div>
+        <!-- End Single Input -->
+        <!-- Single Input -->
+        <div class="single-input-container">
+          <div class="single-label">
+            <label>State</label>
+          </div>
+          <div class="single-input">
+            <div class="input-space">
+              <select formControlName="state">
+                <option
+                  *ngFor="let state of billingAddressStates"
+                  [ngValue]="state"
+                >
+                  {{ state.name }}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <!-- End Single Input -->
+        <!-- Single Input -->
+        <div class="single-input-container">
+          <div class="single-label">
+            <label>ZIP Code</label>
+          </div>
+          <div class="single-input">
+            <div class="input-space">
+              <input type="text" formControlName="zipCode" />
+            </div>
+          </div>
+        </div>
+        <!-- End Single Input -->
+      </div>
+      <!-- End Billing FormGroup -->
+
+      <!-- ********** -->
+
+      <!-- Credit Card FormGroup -->
+      <h3>Credit Card Information</h3>
+      <div class="form-area" formGroupName="creditCard">
+        <!-- Single Input -->
+        <div class="single-input-container">
+          <div class="single-label">
+            <label>Card Type</label>
+          </div>
+          <div class="single-input">
+            <div class="input-space">
+              <select formControlName="cardType">
+                <option value="Visa">Visa</option>
+                <option value="AMEX">AMEX</option>
+                <option value="Mastercard">Mastercard</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <!-- End Single Input -->
+        <!-- Single Input -->
+        <div class="single-input-container">
+          <div class="single-label">
+            <label>Card Holder</label>
+          </div>
+          <div class="single-input">
+            <div class="input-space">
+              <input type="text" formControlName="cardHolder" />
+            </div>
+          </div>
+        </div>
+        <!-- End Single Input -->
+        <!-- Single Input -->
+        <div class="single-input-container">
+          <div class="single-label">
+            <label>Card Number</label>
+          </div>
+          <div class="single-input">
+            <div class="input-space">
+              <input type="text" formControlName="cardNumber" />
+            </div>
+          </div>
+        </div>
+        <!-- End Single Input -->
+        <!-- Single Input -->
+        <div class="single-input-container">
+          <div class="single-label">
+            <label>Card Security Code</label>
+          </div>
+          <div class="single-input">
+            <div class="input-space">
+              <input type="text" formControlName="securityCode" />
+            </div>
+          </div>
+        </div>
+        <!-- End Single Input -->
+        <!-- Single Input -->
+        <div class="single-input-container">
+          <div class="single-label">
+            <label>Expiration Date</label>
+          </div>
+          <div class="single-input">
+            <div class="input-space">
+              <label> Month</label>
+              <select formControlName="expirationMonth">
+                <option *ngFor="let month of creditCardMonths">
+                  {{ month }}
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="single-input">
+            <div class="input-space">
+              <label> Year</label>
+              <select
+                formControlName="expirationYear"
+                (change)="handleMonthsAndYears()"
+              >
+                <option *ngFor="let year of creditCardYears">
+                  {{ year }}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <!-- End Single Input -->
+      </div>
+      <!-- End Customer FormGroup -->
+
+      <hr style="margin-top: 4rem !important" />
+
+      <!-- Order Details -->
+      <div class="form-area order-details-box">
+        <h3>Summary</h3>
+        <p>Total Quantity: {{ totalQuantity }}</p>
+        <p>Shipping: FREE</p>
+        <p>Total Price: {{ totalPrice }}</p>
+      </div>
+      <!-- Submit -->
+      <div class="text-center cform-submit">
+        <button type="submit" class="btn btn-warning btn-size">
+          Complete Payment
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
