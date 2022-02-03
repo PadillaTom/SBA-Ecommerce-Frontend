@@ -112,6 +112,19 @@
           </div>
           <div class="single-input">
             <div class="input-space">
+              <!-- Validation -->
+              <div
+                *ngIf="
+                  shipCountry!.invalid &&
+                  (shipCountry!.dirty || shipCountry!.touched)
+                "
+                class="validation-container"
+              >
+                <div *ngIf="(shipCountry?.errors)!['required']">
+                  This field is required.
+                </div>
+              </div>
+              <!-- End Validation -->
               <select
                 formControlName="country"
                 (change)="getStates('shippingAddress')"
@@ -131,6 +144,26 @@
           </div>
           <div class="single-input">
             <div class="input-space">
+              <!-- Validation -->
+              <div
+                *ngIf="
+                  shipCity!.invalid && (shipCity!.dirty || shipCity!.touched)
+                "
+                class="validation-container"
+              >
+                <div
+                  *ngIf="
+                    (shipCity?.errors)!['required'] ||
+                    (shipCity?.errors)!['notOnlyWhitespace'] == true
+                  "
+                >
+                  This field is required.
+                </div>
+                <div *ngIf="(shipCity?.errors)!['minlength']">
+                  Minimun 2 characters
+                </div>
+              </div>
+              <!-- End Validation -->
               <input type="text" formControlName="city" />
             </div>
           </div>
@@ -143,6 +176,27 @@
           </div>
           <div class="single-input">
             <div class="input-space">
+              <!-- Validation -->
+              <div
+                *ngIf="
+                  shipStreet!.invalid &&
+                  (shipStreet!.dirty || shipStreet!.touched)
+                "
+                class="validation-container"
+              >
+                <div
+                  *ngIf="
+                    (shipStreet?.errors)!['required'] ||
+                    (shipStreet?.errors)!['notOnlyWhitespace'] == true
+                  "
+                >
+                  This field is required.
+                </div>
+                <div *ngIf="(shipStreet?.errors)!['minlength']">
+                  Minimun 2 characters
+                </div>
+              </div>
+              <!-- End Validation -->
               <input type="text" formControlName="street" />
             </div>
           </div>
@@ -155,6 +209,18 @@
           </div>
           <div class="single-input">
             <div class="input-space">
+              <!-- Validation -->
+              <div
+                *ngIf="
+                  shipState!.invalid && (shipState!.dirty || shipState!.touched)
+                "
+                class="validation-container"
+              >
+                <div *ngIf="(shipState?.errors)!['required']">
+                  This field is required.
+                </div>
+              </div>
+              <!-- End Validation -->
               <select formControlName="state">
                 <option
                   *ngFor="let state of shippingAddressStates"
@@ -174,6 +240,24 @@
           </div>
           <div class="single-input">
             <div class="input-space">
+              <!-- Validation -->
+              <div
+                *ngIf="shipZip!.invalid && (shipZip!.dirty || shipZip!.touched)"
+                class="validation-container"
+              >
+                <div
+                  *ngIf="
+                    (shipZip?.errors)!['required'] ||
+                    (shipZip?.errors)!['notOnlyWhitespace'] == true
+                  "
+                >
+                  This field is required.
+                </div>
+                <div *ngIf="(shipZip?.errors)!['minlength']">
+                  Minimun 2 characters
+                </div>
+              </div>
+              <!-- End Validation -->
               <input type="text" formControlName="zipCode" />
             </div>
           </div>
@@ -204,6 +288,19 @@
           </div>
           <div class="single-input">
             <div class="input-space">
+              <!-- Validation -->
+              <div
+                *ngIf="
+                  billCountry!.invalid &&
+                  (billCountry!.dirty || billCountry!.touched)
+                "
+                class="validation-container"
+              >
+                <div *ngIf="(billCountry?.errors)!['required']">
+                  This field is required.
+                </div>
+              </div>
+              <!-- End Validation -->
               <select
                 formControlName="country"
                 (change)="getStates('billingAddress')"
@@ -223,6 +320,26 @@
           </div>
           <div class="single-input">
             <div class="input-space">
+              <!-- Validation -->
+              <div
+                *ngIf="
+                  billCity!.invalid && (billCity!.dirty || billCity!.touched)
+                "
+                class="validation-container"
+              >
+                <div
+                  *ngIf="
+                    (billCity?.errors)!['required'] ||
+                    (billCity?.errors)!['notOnlyWhitespace'] == true
+                  "
+                >
+                  This field is required.
+                </div>
+                <div *ngIf="(billCity?.errors)!['minlength']">
+                  Minimun 2 characters
+                </div>
+              </div>
+              <!-- End Validation -->
               <input type="text" formControlName="city" />
             </div>
           </div>
@@ -235,6 +352,27 @@
           </div>
           <div class="single-input">
             <div class="input-space">
+              <!-- Validation -->
+              <div
+                *ngIf="
+                  billStreet!.invalid &&
+                  (billStreet!.dirty || billStreet!.touched)
+                "
+                class="validation-container"
+              >
+                <div
+                  *ngIf="
+                    (billStreet?.errors)!['required'] ||
+                    (billStreet?.errors)!['notOnlyWhitespace'] == true
+                  "
+                >
+                  This field is required.
+                </div>
+                <div *ngIf="(billStreet?.errors)!['minlength']">
+                  Minimun 2 characters
+                </div>
+              </div>
+              <!-- End Validation -->
               <input type="text" formControlName="street" />
             </div>
           </div>
@@ -247,6 +385,18 @@
           </div>
           <div class="single-input">
             <div class="input-space">
+              <!-- Validation -->
+              <div
+                *ngIf="
+                  billState!.invalid && (billState!.dirty || billState!.touched)
+                "
+                class="validation-container"
+              >
+                <div *ngIf="(billState?.errors)!['required']">
+                  This field is required.
+                </div>
+              </div>
+              <!-- End Validation -->
               <select formControlName="state">
                 <option
                   *ngFor="let state of billingAddressStates"
@@ -266,6 +416,24 @@
           </div>
           <div class="single-input">
             <div class="input-space">
+              <!-- Validation -->
+              <div
+                *ngIf="billZip!.invalid && (billZip!.dirty || billZip!.touched)"
+                class="validation-container"
+              >
+                <div
+                  *ngIf="
+                    (billZip?.errors)!['required'] ||
+                    (billZip?.errors)!['notOnlyWhitespace'] == true
+                  "
+                >
+                  This field is required.
+                </div>
+                <div *ngIf="(billZip?.errors)!['minlength']">
+                  Minimun 2 characters
+                </div>
+              </div>
+              <!-- End Validation -->
               <input type="text" formControlName="zipCode" />
             </div>
           </div>
@@ -286,6 +454,21 @@
           </div>
           <div class="single-input">
             <div class="input-space">
+              <!-- Validation -->
+              <div
+                *ngIf="ccType!.invalid && (ccType!.dirty || ccType!.touched)"
+                class="validation-container"
+              >
+                <div
+                  *ngIf="
+                    (ccType?.errors)!['required'] ||
+                    (ccType?.errors)!['notOnlyWhitespace'] == true
+                  "
+                >
+                  This field is required.
+                </div>
+              </div>
+              <!-- End Validation -->
               <select formControlName="cardType">
                 <option value="Visa">Visa</option>
                 <option value="AMEX">AMEX</option>
@@ -302,6 +485,26 @@
           </div>
           <div class="single-input">
             <div class="input-space">
+              <!-- Validation -->
+              <div
+                *ngIf="
+                  ccHolder!.invalid && (ccHolder!.dirty || ccHolder!.touched)
+                "
+                class="validation-container"
+              >
+                <div
+                  *ngIf="
+                    (ccHolder?.errors)!['required'] ||
+                    (ccHolder?.errors)!['notOnlyWhitespace'] == true
+                  "
+                >
+                  This field is required.
+                </div>
+                <div *ngIf="(ccHolder?.errors)!['minlength']">
+                  Minimun 2 characters
+                </div>
+              </div>
+              <!-- End Validation -->
               <input type="text" formControlName="cardHolder" />
             </div>
           </div>
@@ -314,6 +517,23 @@
           </div>
           <div class="single-input">
             <div class="input-space">
+              <!-- Validation -->
+              <div
+                *ngIf="
+                  ccNumber!.invalid && (ccNumber!.dirty || ccNumber!.touched)
+                "
+                class="validation-container"
+              >
+                <div
+                  *ngIf="
+                    (ccNumber?.errors)!['required'] ||
+                    (ccNumber?.errors)!['pattern']
+                  "
+                >
+                  Should have 16 digits.
+                </div>
+              </div>
+              <!-- End Validation -->
               <input type="text" formControlName="cardNumber" />
             </div>
           </div>
@@ -326,6 +546,21 @@
           </div>
           <div class="single-input">
             <div class="input-space">
+              <!-- Validation -->
+              <div
+                *ngIf="ccCode!.invalid && (ccCode!.dirty || ccCode!.touched)"
+                class="validation-container"
+              >
+                <div
+                  *ngIf="
+                    (ccCode?.errors)!['required'] ||
+                    (ccCode?.errors)!['pattern']
+                  "
+                >
+                  Should have 3 or 4 digits.
+                </div>
+              </div>
+              <!-- End Validation -->
               <input type="text" formControlName="securityCode" />
             </div>
           </div>

@@ -58,26 +58,60 @@ export class CheckoutComponent implements OnInit {
       }),
       // Shipping
       shippingAddress: this.formBuilder.group({
-        street: [''],
-        city: [''],
-        state: [''],
-        country: [''],
-        zipCode: [''],
+        street: new FormControl('', [
+          Validators.required,
+          Validators.minLength(2),
+          CustomValidators.notOnlyWhitespace,
+        ]),
+        city: new FormControl('', [
+          Validators.required,
+          Validators.minLength(2),
+          CustomValidators.notOnlyWhitespace,
+        ]),
+        state: new FormControl('', [Validators.required]),
+        country: new FormControl('', [Validators.required]),
+        zipCode: new FormControl('', [
+          Validators.required,
+          Validators.minLength(2),
+          CustomValidators.notOnlyWhitespace,
+        ]),
       }),
       // Billing
       billingAddress: this.formBuilder.group({
-        street: [''],
-        city: [''],
-        state: [''],
-        country: [''],
-        zipCode: [''],
+        street: new FormControl('', [
+          Validators.required,
+          Validators.minLength(2),
+          CustomValidators.notOnlyWhitespace,
+        ]),
+        city: new FormControl('', [
+          Validators.required,
+          Validators.minLength(2),
+          CustomValidators.notOnlyWhitespace,
+        ]),
+        state: new FormControl('', [Validators.required]),
+        country: new FormControl('', [Validators.required]),
+        zipCode: new FormControl('', [
+          Validators.required,
+          Validators.minLength(2),
+          CustomValidators.notOnlyWhitespace,
+        ]),
       }),
       // Credit Card
       creditCard: this.formBuilder.group({
-        cardType: [''],
-        cardHolder: [''],
-        cardNumber: [''],
-        securityCode: [''],
+        cardType: new FormControl('', [Validators.required]),
+        cardHolder: new FormControl('', [
+          Validators.required,
+          Validators.minLength(2),
+          CustomValidators.notOnlyWhitespace,
+        ]),
+        cardNumber: new FormControl('', [
+          Validators.required,
+          Validators.pattern('[0-9]{16}'),
+        ]),
+        securityCode: new FormControl('', [
+          Validators.required,
+          Validators.pattern('[0-9]{3,4}$'),
+        ]),
         expirationMonth: [''],
         expirationYear: [''],
       }),
@@ -111,6 +145,48 @@ export class CheckoutComponent implements OnInit {
   }
   get email() {
     return this.checkoutFormGroup.get('customer.email');
+  }
+  get shipStreet() {
+    return this.checkoutFormGroup.get('shippingAddress.street');
+  }
+  get shipCity() {
+    return this.checkoutFormGroup.get('shippingAddress.city');
+  }
+  get shipState() {
+    return this.checkoutFormGroup.get('shippingAddress.state');
+  }
+  get shipZip() {
+    return this.checkoutFormGroup.get('shippingAddress.zipCode');
+  }
+  get shipCountry() {
+    return this.checkoutFormGroup.get('shippingAddress.country');
+  }
+  get billStreet() {
+    return this.checkoutFormGroup.get('billingAddress.street');
+  }
+  get billCity() {
+    return this.checkoutFormGroup.get('billingAddress.city');
+  }
+  get billState() {
+    return this.checkoutFormGroup.get('billingAddress.state');
+  }
+  get billZip() {
+    return this.checkoutFormGroup.get('billingAddress.zipCode');
+  }
+  get billCountry() {
+    return this.checkoutFormGroup.get('billingAddress.country');
+  }
+  get ccType() {
+    return this.checkoutFormGroup.get('creditCard.cardType');
+  }
+  get ccHolder() {
+    return this.checkoutFormGroup.get('creditCard.cardHolder');
+  }
+  get ccNumber() {
+    return this.checkoutFormGroup.get('creditCard.cardNumber');
+  }
+  get ccCode() {
+    return this.checkoutFormGroup.get('creditCard.securityCode');
   }
 
   // ==================
