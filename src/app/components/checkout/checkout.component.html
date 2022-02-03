@@ -13,20 +13,22 @@
           </div>
           <div class="single-input">
             <div class="input-space">
-              <input type="text" formControlName="firstName" />
+              <!-- Validation -->
               <div
                 *ngIf="
-                  firstName.invalid && (firstName.dirty || firstName.touched)
+                  firstName!.invalid && (firstName!.dirty || firstName!.touched)
                 "
-                class="alert alert-danger mt-1"
+                class="validation-container"
               >
-                <div *ngIf="firstName.errors.required">
+                <div *ngIf="(firstName?.errors)!['required']">
                   This field is required.
                 </div>
-                <div *ngIf="firstName.errors.minlength">
+                <div *ngIf="(firstName?.errors)!['minlength']">
                   Minimun 2 characters
                 </div>
               </div>
+              <!-- End Validation -->
+              <input type="text" formControlName="firstName" />
             </div>
           </div>
         </div>
@@ -38,6 +40,21 @@
           </div>
           <div class="single-input">
             <div class="input-space">
+              <!-- Validation -->
+              <div
+                *ngIf="
+                  lastName!.invalid && (lastName!.dirty || lastName!.touched)
+                "
+                class="validation-container"
+              >
+                <div *ngIf="(lastName?.errors)!['required']">
+                  This field is required.
+                </div>
+                <div *ngIf="(lastName?.errors)!['minlength']">
+                  Minimun 2 characters
+                </div>
+              </div>
+              <!-- End Validation -->
               <input type="text" formControlName="lastName" />
             </div>
           </div>
@@ -50,6 +67,16 @@
           </div>
           <div class="single-input">
             <div class="input-space">
+              <!-- Validation -->
+              <div
+                *ngIf="email!.invalid && (email!.dirty || email!.touched)"
+                class="validation-container"
+              >
+                <div *ngIf="(email?.errors)!['pattern']">
+                  This field should be a valid email.
+                </div>
+              </div>
+              <!-- End Validation -->
               <input type="text" formControlName="email" />
             </div>
           </div>

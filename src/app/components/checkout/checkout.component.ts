@@ -100,13 +100,13 @@ export class CheckoutComponent implements OnInit {
 
   // *** Getters ***
   get firstName() {
-    return this.checkoutFormGroup.get('customer["firstName"]');
+    return this.checkoutFormGroup.get('customer.firstName');
   }
   get lastName() {
-    return this.checkoutFormGroup.get('customer["lastName"]');
+    return this.checkoutFormGroup.get('customer.lastName');
   }
   get email() {
-    return this.checkoutFormGroup.get('customer["email"]');
+    return this.checkoutFormGroup.get('customer.email');
   }
 
   // ==================
