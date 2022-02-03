@@ -20,7 +20,12 @@
                 "
                 class="validation-container"
               >
-                <div *ngIf="(firstName?.errors)!['required']">
+                <div
+                  *ngIf="
+                    (firstName?.errors)!['required'] ||
+                    (firstName?.errors)!['notOnlyWhitespace'] == true
+                  "
+                >
                   This field is required.
                 </div>
                 <div *ngIf="(firstName?.errors)!['minlength']">
@@ -47,7 +52,12 @@
                 "
                 class="validation-container"
               >
-                <div *ngIf="(lastName?.errors)!['required']">
+                <div
+                  *ngIf="
+                    (lastName?.errors)!['required'] ||
+                    (lastName?.errors)!['notOnlyWhitespace'] == true
+                  "
+                >
                   This field is required.
                 </div>
                 <div *ngIf="(lastName?.errors)!['minlength']">
@@ -72,7 +82,12 @@
                 *ngIf="email!.invalid && (email!.dirty || email!.touched)"
                 class="validation-container"
               >
-                <div *ngIf="(email?.errors)!['pattern']">
+                <div
+                  *ngIf="
+                    (email?.errors)!['pattern'] ||
+                    (email?.errors)!['notOnlyWhitespace'] == true
+                  "
+                >
                   This field should be a valid email.
                 </div>
               </div>

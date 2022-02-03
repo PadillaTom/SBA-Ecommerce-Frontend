@@ -9,6 +9,7 @@ import {
 import { Country } from 'app/common/country';
 import { State } from 'app/common/state';
 import { CheckoutFormService } from 'app/services/checkout-form.service';
+import { CustomValidators } from 'app/validators/custom-validators';
 
 @Component({
   selector: 'app-checkout',
@@ -42,14 +43,17 @@ export class CheckoutComponent implements OnInit {
         firstName: new FormControl('', [
           Validators.required,
           Validators.minLength(2),
+          CustomValidators.notOnlyWhitespace,
         ]),
         lastName: new FormControl('', [
           Validators.required,
           Validators.minLength(2),
+          CustomValidators.notOnlyWhitespace,
         ]),
         email: new FormControl('', [
           Validators.required,
           Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,8}$'),
+          CustomValidators.notOnlyWhitespace,
         ]),
       }),
       // Shipping
