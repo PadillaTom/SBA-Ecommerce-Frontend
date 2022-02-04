@@ -291,6 +291,8 @@ export class CheckoutComponent implements OnInit {
     // === Call API ===
     this.checkoutService.placeOrder(purchase).subscribe({
       next: (response) => {
+        console.log(response);
+
         alert(
           `Order Placed Successfully. \nTracking Number: ${response.orderTrackingNumber}`
         );
