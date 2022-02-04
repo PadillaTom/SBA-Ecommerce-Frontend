@@ -7,8 +7,6 @@ export class CustomValidators {
         notOnlyWhitespace: true,
       };
     }
-    return {
-      notOnlyWhitespace: false,
-    };
+    return null;
   }
 }

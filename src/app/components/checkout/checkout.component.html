@@ -16,19 +16,19 @@
               <!-- Validation -->
               <div
                 *ngIf="
-                  firstName?.invalid && (firstName?.dirty || firstName?.touched)
+                  firstName.invalid && (firstName.dirty || firstName.touched)
                 "
                 class="validation-container"
               >
                 <div
                   *ngIf="
-                    (firstName?.errors)!['required'] ||
-                    (firstName?.errors)!['notOnlyWhitespace'] == true
+                    firstName.errors['required'] ||
+                    firstName.errors['notOnlyWhitespace'] == true
                   "
                 >
                   This field is required.
                 </div>
-                <div *ngIf="(firstName?.errors)!['minlength']">
+                <div *ngIf="firstName.errors['minlength']">
                   Minimun 2 characters
                 </div>
               </div>
@@ -47,20 +47,18 @@
             <div class="input-space">
               <!-- Validation -->
               <div
-                *ngIf="
-                  lastName!.invalid && (lastName!.dirty || lastName!.touched)
-                "
+                *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)"
                 class="validation-container"
               >
                 <div
                   *ngIf="
-                    (lastName?.errors)!['required'] ||
-                    (lastName?.errors)!['notOnlyWhitespace'] == true
+                    lastName.errors['required'] ||
+                    lastName.errors['notOnlyWhitespace'] == true
                   "
                 >
                   This field is required.
                 </div>
-                <div *ngIf="(lastName?.errors)!['minlength']">
+                <div *ngIf="lastName.errors['minlength']">
                   Minimun 2 characters
                 </div>
               </div>
@@ -79,13 +77,13 @@
             <div class="input-space">
               <!-- Validation -->
               <div
-                *ngIf="email!.invalid && (email!.dirty || email!.touched)"
+                *ngIf="email.invalid && (email.dirty || email.touched)"
                 class="validation-container"
               >
                 <div
                   *ngIf="
-                    (email?.errors)!['pattern'] ||
-                    (email?.errors)!['notOnlyWhitespace'] == true
+                    email.errors['pattern'] ||
+                    email.errors['notOnlyWhitespace'] == true
                   "
                 >
                   This field should be a valid email.
@@ -115,12 +113,12 @@
               <!-- Validation -->
               <div
                 *ngIf="
-                  shipCountry!.invalid &&
-                  (shipCountry!.dirty || shipCountry!.touched)
+                  shipCountry.invalid &&
+                  (shipCountry.dirty || shipCountry.touched)
                 "
                 class="validation-container"
               >
-                <div *ngIf="(shipCountry?.errors)!['required']">
+                <div *ngIf="shipCountry.errors['required']">
                   This field is required.
                 </div>
               </div>
@@ -146,20 +144,18 @@
             <div class="input-space">
               <!-- Validation -->
               <div
-                *ngIf="
-                  shipCity!.invalid && (shipCity!.dirty || shipCity!.touched)
-                "
+                *ngIf="shipCity.invalid && (shipCity.dirty || shipCity.touched)"
                 class="validation-container"
               >
                 <div
                   *ngIf="
-                    (shipCity?.errors)!['required'] ||
-                    (shipCity?.errors)!['notOnlyWhitespace'] == true
+                    shipCity.errors['required'] ||
+                    shipCity.errors['notOnlyWhitespace'] == true
                   "
                 >
                   This field is required.
                 </div>
-                <div *ngIf="(shipCity?.errors)!['minlength']">
+                <div *ngIf="shipCity.errors['minlength']">
                   Minimun 2 characters
                 </div>
               </div>
@@ -179,20 +175,19 @@
               <!-- Validation -->
               <div
                 *ngIf="
-                  shipStreet!.invalid &&
-                  (shipStreet!.dirty || shipStreet!.touched)
+                  shipStreet.invalid && (shipStreet.dirty || shipStreet.touched)
                 "
                 class="validation-container"
               >
                 <div
                   *ngIf="
-                    (shipStreet?.errors)!['required'] ||
-                    (shipStreet?.errors)!['notOnlyWhitespace'] == true
+                    shipStreet.errors['required'] ||
+                    shipStreet.errors['notOnlyWhitespace'] == true
                   "
                 >
                   This field is required.
                 </div>
-                <div *ngIf="(shipStreet?.errors)!['minlength']">
+                <div *ngIf="shipStreet.errors['minlength']">
                   Minimun 2 characters
                 </div>
               </div>
@@ -216,7 +211,7 @@
                 "
                 class="validation-container"
               >
-                <div *ngIf="(shipState?.errors)!['required']">
+                <div *ngIf="shipState.errors['required']">
                   This field is required.
                 </div>
               </div>
@@ -247,13 +242,13 @@
               >
                 <div
                   *ngIf="
-                    (shipZip?.errors)!['required'] ||
-                    (shipZip?.errors)!['notOnlyWhitespace'] == true
+                    shipZip.errors['required'] ||
+                    shipZip.errors['notOnlyWhitespace'] == true
                   "
                 >
                   This field is required.
                 </div>
-                <div *ngIf="(shipZip?.errors)!['minlength']">
+                <div *ngIf="shipZip.errors['minlength']">
                   Minimun 2 characters
                 </div>
               </div>
@@ -271,7 +266,7 @@
         <label class="au-checkbox">
           <input type="checkbox" (change)="useSameShippingAsBilling($event)" />
           <span class="au-checkmark"></span>
-          Shipping Address is Billing Address?
+          Shipping Address is Billing Address
         </label>
       </div>
       <!-- ********** -->
@@ -296,7 +291,7 @@
                 "
                 class="validation-container"
               >
-                <div *ngIf="(billCountry?.errors)!['required']">
+                <div *ngIf="billCountry.errors['required']">
                   This field is required.
                 </div>
               </div>
@@ -329,13 +324,13 @@
               >
                 <div
                   *ngIf="
-                    (billCity?.errors)!['required'] ||
-                    (billCity?.errors)!['notOnlyWhitespace'] == true
+                    billCity.errors['required'] ||
+                    billCity.errors['notOnlyWhitespace'] == true
                   "
                 >
                   This field is required.
                 </div>
-                <div *ngIf="(billCity?.errors)!['minlength']">
+                <div *ngIf="billCity.errors['minlength']">
                   Minimun 2 characters
                 </div>
               </div>
@@ -362,13 +357,13 @@
               >
                 <div
                   *ngIf="
-                    (billStreet?.errors)!['required'] ||
-                    (billStreet?.errors)!['notOnlyWhitespace'] == true
+                    billStreet.errors['required'] ||
+                    billStreet.errors['notOnlyWhitespace'] == true
                   "
                 >
                   This field is required.
                 </div>
-                <div *ngIf="(billStreet?.errors)!['minlength']">
+                <div *ngIf="billStreet.errors['minlength']">
                   Minimun 2 characters
                 </div>
               </div>
@@ -392,7 +387,7 @@
                 "
                 class="validation-container"
               >
-                <div *ngIf="(billState?.errors)!['required']">
+                <div *ngIf="billState.errors['required']">
                   This field is required.
                 </div>
               </div>
@@ -423,13 +418,13 @@
               >
                 <div
                   *ngIf="
-                    (billZip?.errors)!['required'] ||
-                    (billZip?.errors)!['notOnlyWhitespace'] == true
+                    billZip.errors['required'] ||
+                    billZip.errors['notOnlyWhitespace'] == true
                   "
                 >
                   This field is required.
                 </div>
-                <div *ngIf="(billZip?.errors)!['minlength']">
+                <div *ngIf="billZip.errors['minlength']">
                   Minimun 2 characters
                 </div>
               </div>
@@ -461,8 +456,8 @@
               >
                 <div
                   *ngIf="
-                    (ccType?.errors)!['required'] ||
-                    (ccType?.errors)!['notOnlyWhitespace'] == true
+                    ccType.errors['required'] ||
+                    ccType.errors['notOnlyWhitespace'] == true
                   "
                 >
                   This field is required.
@@ -494,13 +489,13 @@
               >
                 <div
                   *ngIf="
-                    (ccHolder?.errors)!['required'] ||
-                    (ccHolder?.errors)!['notOnlyWhitespace'] == true
+                    ccHolder.errors['required'] ||
+                    ccHolder.errors['notOnlyWhitespace'] == true
                   "
                 >
                   This field is required.
                 </div>
-                <div *ngIf="(ccHolder?.errors)!['minlength']">
+                <div *ngIf="ccHolder.errors['minlength']">
                   Minimun 2 characters
                 </div>
               </div>
@@ -526,8 +521,7 @@
               >
                 <div
                   *ngIf="
-                    (ccNumber?.errors)!['required'] ||
-                    (ccNumber?.errors)!['pattern']
+                    ccNumber.errors['required'] || ccNumber.errors['pattern']
                   "
                 >
                   Should have 16 digits.
@@ -552,10 +546,7 @@
                 class="validation-container"
               >
                 <div
-                  *ngIf="
-                    (ccCode?.errors)!['required'] ||
-                    (ccCode?.errors)!['pattern']
-                  "
+                  *ngIf="ccCode.errors['required'] || ccCode.errors['pattern']"
                 >
                   Should have 3 or 4 digits.
                 </div>

@@ -49,17 +49,17 @@ export class CheckoutComponent implements OnInit {
     this.checkoutFormGroup = this.formBuilder.group({
       // Customer
       customer: this.formBuilder.group({
-        firstName: new FormControl(null, [
+        firstName: new FormControl('', [
           Validators.required,
           Validators.minLength(2),
           CustomValidators.notOnlyWhitespace,
         ]),
-        lastName: new FormControl(null, [
+        lastName: new FormControl('', [
           Validators.required,
           Validators.minLength(2),
           CustomValidators.notOnlyWhitespace,
         ]),
-        email: new FormControl(null, [
+        email: new FormControl('', [
           Validators.required,
           Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,8}$'),
           CustomValidators.notOnlyWhitespace,
@@ -67,19 +67,19 @@ export class CheckoutComponent implements OnInit {
       }),
       // Shipping
       shippingAddress: this.formBuilder.group({
-        street: new FormControl(null, [
+        street: new FormControl('', [
           Validators.required,
           Validators.minLength(2),
           CustomValidators.notOnlyWhitespace,
         ]),
-        city: new FormControl(null, [
+        city: new FormControl('', [
           Validators.required,
           Validators.minLength(2),
           CustomValidators.notOnlyWhitespace,
         ]),
-        state: new FormControl(null, [Validators.required]),
-        country: new FormControl(null, [Validators.required]),
-        zipCode: new FormControl(null, [
+        state: new FormControl('', [Validators.required]),
+        country: new FormControl('', [Validators.required]),
+        zipCode: new FormControl('', [
           Validators.required,
           Validators.minLength(2),
           CustomValidators.notOnlyWhitespace,
@@ -87,19 +87,19 @@ export class CheckoutComponent implements OnInit {
       }),
       // Billing
       billingAddress: this.formBuilder.group({
-        street: new FormControl(null, [
+        street: new FormControl('', [
           Validators.required,
           Validators.minLength(2),
           CustomValidators.notOnlyWhitespace,
         ]),
-        city: new FormControl(null, [
+        city: new FormControl('', [
           Validators.required,
           Validators.minLength(2),
           CustomValidators.notOnlyWhitespace,
         ]),
-        state: new FormControl(null, [Validators.required]),
-        country: new FormControl(null, [Validators.required]),
-        zipCode: new FormControl(null, [
+        state: new FormControl('', [Validators.required]),
+        country: new FormControl('', [Validators.required]),
+        zipCode: new FormControl('', [
           Validators.required,
           Validators.minLength(2),
           CustomValidators.notOnlyWhitespace,
@@ -107,22 +107,22 @@ export class CheckoutComponent implements OnInit {
       }),
       // Credit Card
       creditCard: this.formBuilder.group({
-        cardType: new FormControl(null, [Validators.required]),
-        cardHolder: new FormControl(null, [
+        cardType: new FormControl('', [Validators.required]),
+        cardHolder: new FormControl('', [
           Validators.required,
           Validators.minLength(2),
           CustomValidators.notOnlyWhitespace,
         ]),
-        cardNumber: new FormControl(null, [
+        cardNumber: new FormControl('', [
           Validators.required,
           Validators.pattern('[0-9]{16}'),
         ]),
-        securityCode: new FormControl(null, [
+        securityCode: new FormControl('', [
           Validators.required,
           Validators.pattern('[0-9]{3,4}$'),
         ]),
-        expirationMonth: [null],
-        expirationYear: [null],
+        expirationMonth: [''],
+        expirationYear: [''],
       }),
     });
     // ==================
@@ -207,6 +207,7 @@ export class CheckoutComponent implements OnInit {
   get ccCode() {
     return this.checkoutFormGroup.get('creditCard.securityCode');
   }
+
   // *** Shipping === Billing ***
   useSameShippingAsBilling(event: any) {
     if (event.target.checked) {
@@ -225,20 +226,19 @@ export class CheckoutComponent implements OnInit {
     // Functionality:
     if (this.checkoutFormGroup.invalid) {
       this.checkoutFormGroup.markAllAsTouched();
+      // console.log('==============');
+      // console.log('Invalid');
+      // console.log('==============');
+      // // console.log(document.getElementsByClassName('ng-invalid'));
+      // console.log('Form Values:');
+      // console.log(this.checkoutFormGroup.value);
+      // // Get all Form Controls keys and loop them
+      // console.log('Erros for every FormControl:');
+      // Object.keys(this.checkoutFormGroup.controls).forEach((key) => {
+      //   // Get errors of every form control:
 
-      console.log('==============');
-      console.log('Invalid');
-      console.log('==============');
-      // console.log(document.getElementsByClassName('ng-invalid'));
-      console.log('Form Values:');
-      console.log(this.checkoutFormGroup.value);
-      // Get all Form Controls keys and loop them
-      console.log('Erros for every FormControl:');
-      Object.keys(this.checkoutFormGroup.controls).forEach((key) => {
-        // Get errors of every form control:
-
-        console.log(key + ': ' + this.checkoutFormGroup.get(key)?.errors);
-      });
+      //   console.log(key + ': ' + this.checkoutFormGroup.get(key)?.errors);
+      // });
       return;
     }
     // === Creating JSON for Backend ===
@@ -273,13 +273,13 @@ export class CheckoutComponent implements OnInit {
       this.checkoutFormGroup.controls['billingAddress'].value;
 
     const billingState: State = JSON.parse(
-      JSON.stringify(purchase.shippingAddress.state)
+      JSON.stringify(purchase.billingAddress.state)
     );
     const billingCountry: Country = JSON.parse(
-      JSON.stringify(purchase.shippingAddress.country)
+      JSON.stringify(purchase.billingAddress.country)
     );
-    purchase.shippingAddress.state = billingState.name;
-    purchase.shippingAddress.country = billingCountry.name;
+    purchase.billingAddress.state = billingState.name;
+    purchase.billingAddress.country = billingCountry.name;
 
     // Customer:
     purchase.customer = this.checkoutFormGroup.controls['customer'].value;
@@ -298,6 +298,8 @@ export class CheckoutComponent implements OnInit {
         this.resetCart();
       },
       error: (err) => {
+        console.log(this.checkoutFormGroup.value);
+        console.log(err);
         alert(`There was an error: ${err.message}`);
       },
     });

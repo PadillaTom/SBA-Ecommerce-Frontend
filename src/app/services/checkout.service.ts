@@ -13,6 +13,7 @@ export class CheckoutService {
 
   // POST to API
   placeOrder(purchase: Purchase): Observable<any> {
+    console.log(purchase);
     return this.httpClient.post<Purchase>(this.purchaseUrl, purchase);
   }
 }
