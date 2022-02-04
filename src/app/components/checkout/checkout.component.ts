@@ -8,6 +8,7 @@ import {
 
 import { Country } from 'app/common/country';
 import { State } from 'app/common/state';
+import { CartService } from 'app/services/cart.service';
 import { CheckoutFormService } from 'app/services/checkout-form.service';
 import { CustomValidators } from 'app/validators/custom-validators';
 
@@ -32,7 +33,8 @@ export class CheckoutComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private checkoutFormService: CheckoutFormService
+    private checkoutFormService: CheckoutFormService,
+    private cartService: CartService
   ) {}
 
   ngOnInit(): void {
@@ -134,6 +136,9 @@ export class CheckoutComponent implements OnInit {
     this.checkoutFormService.getCountries().subscribe((data) => {
       this.countries = data;
     });
+
+    // Get Latest Cart Totals:
+    this.reviewCartDetails();
   }
 
   // *** Getters ***
@@ -253,5 +258,13 @@ export class CheckoutComponent implements OnInit {
       // First State as Default:
       formGroup?.get('state')?.setValue(data[0]);
     });
+  }
+
+  // *** Get Latest Cart Details ***
+  reviewCartDetails() {
+    this.cartService.totalPrice.subscribe((data) => (this.totalPrice = data));
+    this.cartService.totalQuantity.subscribe(
+      (data) => (this.totalQuantity = data)
+    );
   }
 }
