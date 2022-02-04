@@ -16,7 +16,7 @@
               <!-- Validation -->
               <div
                 *ngIf="
-                  firstName!.invalid && (firstName!.dirty || firstName!.touched)
+                  firstName?.invalid && (firstName?.dirty || firstName?.touched)
                 "
                 class="validation-container"
               >
