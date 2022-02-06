@@ -1,10 +1,10 @@
 // === LOCAL ===
 export default {
   oidc: {
-    cliendId: '0oa3tdhcwi4zoVPZi5d7',
+    clientId: '0oa3tdhcwi4zoVPZi5d7',
     issuer: 'https://dev-11935476.okta.com/oauth2/default',
     redirectUri: 'http://localhost:4200/login/callback',
-    scopes: ['openid', 'profiel', 'email'],
+    scopes: ['openid', 'profile', 'email'],
   },
 };
 
