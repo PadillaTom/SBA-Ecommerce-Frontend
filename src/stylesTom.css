@@ -12,6 +12,7 @@ Variables
   --Color-Secondary-White: #f5f5f5;
   --Color-Bg: #fafafa;
   --Color-Light-Green: #89b47e;
+  --Color-Dark-Green: #457e37;
   --Color-Orange: #e4563d;
   --Color-Cream: #f4f3ec;
   /* Font Colors */
@@ -163,8 +164,6 @@ ngb-pagination .page-item.active .page-link {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: auto;
-  padding: 0rem 0.3rem;
 }
 .icons-container > * {
   font-size: 1.4rem;
@@ -172,24 +171,33 @@ ngb-pagination .page-item.active .page-link {
   cursor: pointer;
   transition: var(--MainTrans);
   margin-right: 1rem;
+  /*  */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.icons-container i:hover {
-  transform: scale(1.2);
-}
-.icons-container .cart-status-container {
+/* Cart Status */
+.cart-status-container {
   display: flex;
   flex-direction: row;
   align-items: center;
   font-size: 1rem;
+  transition: var(--MainTrans);
 }
-.icons-container .cart-status-container i {
-  font-size: 1.4rem;
+.icons-left:hover > * {
+  color: var(--Color-Dark-Green);
+}
+.icons-left:hover .cs-data {
+  background: var(--Color-Dark-Green);
+  border: 1px solid var(--Color-Dark-Green);
+}
+.icons-left i {
+  font-size: 1.2rem;
   color: var(--Color-Light-Green);
   cursor: pointer;
   transition: var(--MainTrans);
   margin-left: 0.3rem;
 }
-/* Cart Status */
 .cs-data {
   display: flex;
   flex-direction: row;
@@ -211,6 +219,33 @@ ngb-pagination .page-item.active .page-link {
   padding-left: 0.4rem;
   border-top-right-radius: 1.3rem;
   border-bottom-right-radius: 1.3rem;
+}
+/* Users */
+.icons-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icons-right:hover > * {
+  color: var(--Color-Dark-Green);
+}
+.icons-right i {
+  font-size: 1.17rem;
+  color: var(--Color-Light-Green);
+  cursor: pointer;
+}
+.login-status-header {
+  margin-left: 0.3rem;
+  margin-top: 10%;
+}
+.login-status-header span {
+  display: none;
+}
+.login-status-header h2 {
+  font-size: 1.2rem;
+}
+.login-status-header h3 {
+  font-size: 1.2rem;
 }
 
 /***************************** 
