@@ -101,6 +101,10 @@ hr {
   margin: 0 auto !important;
   margin-top: 1.5rem !important;
 }
+h2,
+h3 {
+  margin: 0 !important;
+}
 
 /* Pagination */
 .products-list-controllers {
@@ -176,6 +180,11 @@ ngb-pagination .page-item.active .page-link {
   align-items: center;
   justify-content: center;
 }
+
+.icons-container span:hover {
+  color: var(--Color-Dark-Green);
+  border: 1px solid var(--Color-Dark-Green);
+}
 /* Cart Status */
 .cart-status-container {
   display: flex;
@@ -226,28 +235,44 @@ ngb-pagination .page-item.active .page-link {
   align-items: center;
   justify-content: center;
 }
-.icons-right:hover > * {
-  color: var(--Color-Dark-Green);
-}
-.icons-right i {
-  font-size: 1.17rem;
-  color: var(--Color-Light-Green);
-  cursor: pointer;
-}
-.login-status-header {
-  margin-left: 0.3rem;
-  margin-top: 10%;
-}
 .login-status-header span {
   display: none;
+  transition: var(--MainTrans);
+  font-size: 1rem;
 }
 .login-status-header h2 {
+  transition: var(--MainTrans);
   font-size: 1.2rem;
+}
+.login-status-header h2:hover {
+  color: var(--Color-Dark-Green);
 }
 .login-status-header h3 {
+  transition: var(--MainTrans);
   font-size: 1.2rem;
 }
+.login-status-header h3:hover {
+  color: var(--Color-Dark-Green);
+}
 
+/* 680px */
+@media screen and (min-width: 680px) {
+  .icons-container span {
+    font-size: 1rem;
+    font-weight: 500;
+    border: 1px solid var(--Color-Light-Green);
+    padding: 0.2rem 0.5rem;
+  }
+  .login-status-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 10rem;
+  }
+  .login-status-header span {
+    display: block;
+  }
+}
 /***************************** 
    ******** Banner ********
 ******************************/
