@@ -6,9 +6,13 @@
         <img src="/assets/images/SBALogo.png" alt="SBA Store" />
       </div>
       <div class="icons-container">
-        <app-cart-status></app-cart-status>
-        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-        <i class="fa fa-user" aria-hidden="true"></i>
+        <div class="icons-left" routerLink="/cart-details">
+          <app-cart-status></app-cart-status>
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+        </div>
+        <div class="icons-right" routerLink="/login">
+          <app-login-status></app-login-status>
+        </div>
       </div>
     </div>
   </nav>
