@@ -25,7 +25,7 @@
             "assets": [
               "src/assets/images/Favicons.png",
               "src/assets",
-              "_redirects"
+              "src/_redirects"
             ],
             "styles": [
               "src/stylesTom.css",
