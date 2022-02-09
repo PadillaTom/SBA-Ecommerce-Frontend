@@ -15,7 +15,7 @@ export default {
   oidc: {
     clientId: '0oa3tdhcwi4zoVPZi5d7',
     issuer: 'https://dev-11935476.okta.com/oauth2/default',
-    redirectUri: window.location.origin + '/callback',
+    redirectUri: window.location.origin + '/login/callback',
     scopes: ['openid', 'profile', 'email'],
   },
 };
