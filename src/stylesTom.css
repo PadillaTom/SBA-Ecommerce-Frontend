@@ -175,7 +175,6 @@ ngb-pagination .page-item.active .page-link {
   cursor: pointer;
   transition: var(--MainTrans);
   margin-right: 1rem;
-  /*  */
   display: flex;
   align-items: center;
   justify-content: center;
