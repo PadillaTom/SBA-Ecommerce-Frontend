@@ -27,15 +27,15 @@ import { MembersPageComponent } from './components/members-page/members-page.com
 import { OrderHistoryComponent } from './components/order-history/order-history.component';
 
 //OKTA:
-const oktaConfig = Object.assign(
-  {
-    onAuthRequired: (oktaAuth: any, injector: any) => {
-      const router = injector.get(Router);
-      router.navigate(['/login']);
-    },
-  },
-  myAppConfig.oidc
-);
+// const oktaConfig = Object.assign(
+//   {
+//     onAuthRequired: (oktaAuth: any, injector: any) => {
+//       const router = injector.get(Router);
+//       router.navigate(['/login']);
+//     },
+//   },
+//   myAppConfig.oidc
+// );
 
 // Routes:
 const myRoutes: Routes = [
@@ -81,7 +81,10 @@ const myRoutes: Routes = [
     ReactiveFormsModule,
     OktaAuthModule,
   ],
-  providers: [ProductService, { provide: OKTA_CONFIG, useValue: oktaConfig }],
+  providers: [
+    ProductService,
+    // { provide: OKTA_CONFIG, useValue: oktaConfig }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
