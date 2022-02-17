@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class OrderHistoryService {
-  private orderUrl = 'https://sba-onlinestore.netlify.app/api/orders';
+  private orderUrl = 'https://sba-ecommerce.herokuapp.com/api/orders';
 
   constructor(private httpClient: HttpClient) {}
 

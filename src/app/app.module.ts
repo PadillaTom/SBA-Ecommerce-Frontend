@@ -44,11 +44,11 @@ const myRoutes: Routes = [
     component: OrderHistoryComponent,
     canActivate: [OktaAuthGuard],
   },
-  {
-    path: 'members',
-    component: MembersPageComponent,
-    canActivate: [OktaAuthGuard],
-  },
+  // {
+  //   path: 'members',
+  //   component: MembersPageComponent,
+  //   canActivate: [OktaAuthGuard],
+  // },
   { path: 'login/callback', component: OktaCallbackComponent },
   { path: 'login', component: LoginComponent },
   { path: 'checkout', component: CheckoutComponent },
@@ -78,7 +78,6 @@ const myRoutes: Routes = [
     OrderHistoryComponent,
   ],
   imports: [
-    // RouterModule.forRoot(myRoutes, { useHash: true }),
     RouterModule.forRoot(myRoutes),
     BrowserModule,
     HttpClientModule,

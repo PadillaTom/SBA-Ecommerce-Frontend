@@ -1,6 +1,5 @@
-<div class="login-status-header">
-  <h2 *ngIf="!isAuthenticated" routerLink="/login">Login</h2>
-  <h3 *ngIf="isAuthenticated" (click)="logout()">Logout</h3>
-  <span *ngIf="isAuthenticated" routerLink="/members">Members</span>
-  <span *ngIf="isAuthenticated" routerLink="/order-history">My Orders</span>
+<h2 *ngIf="!isAuthenticated" routerLink="/login">Login</h2>
+<div class="login-status-header" *ngIf="isAuthenticated">
+  <h3 (click)="logout()">Logout</h3>
+  <span routerLink="/order-history">My Orders</span>
 </div>
